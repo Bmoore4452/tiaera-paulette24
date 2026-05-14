@@ -1,0 +1,27 @@
+personal_docs/
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build output
+dist
+dist-ssr
+*.local
+tsconfig.tsbuildinfo
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
+
+# Editor / OS
+.DS_Store
+*.log
+.idea
+*.iml
+.vscode/
