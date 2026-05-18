@@ -1,20 +1,13 @@
 import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, CalendarDays, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import PageTransition from '../components/layout/PageTransition';
-import Reveal from '../components/Reveal';
-import { masterclasses } from '../data/masterclasses';
-import { formatCents } from '../lib/format';
 
 export default function Home() {
   return (
     <PageTransition>
       <Hero />
       <Marquee />
-      <AboutTeaser />
-      <FeaturedMasterclass />
-      <SpeakingCTA />
-      <ShopTeaser />
     </PageTransition>
   );
 }
@@ -106,15 +99,15 @@ function Hero() {
           transition={{ duration: 0.9, delay: 0.3, ease }}
           className="relative lg:col-span-5"
         >
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-bone/10 bg-ink-soft">
+          <div className="relative mx-auto aspect-4/5 w-full max-w-md overflow-hidden rounded-4xl border border-bone/10 bg-ink-soft">
             {/* Headshot placeholder — replace public/images/headshot.jpg */}
             <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: 'url(/images/headshot.jpg)' }}
+              className="absolute inset-0 bg-cover"
+              style={{ backgroundImage: 'url(/images/brand/red_headshot.png)' }}
               aria-hidden
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/0 to-transparent" />
-            <div className="absolute inset-x-0 top-0 flex items-center justify-between p-6">
+            <div className="absolute inset-x-0 top-0 flex items-start justify-between p-6">
               <span className="inline-flex items-center gap-2 rounded-full bg-paper/10 px-3 py-1 text-xs uppercase tracking-widest text-paper backdrop-blur">
                 <Sparkles size={12} className="text-flame" /> Now booking 2026
               </span>
@@ -127,9 +120,9 @@ function Hero() {
             </div>
             {/* Headshot caption */}
             <div className="pointer-events-none absolute inset-0 grid place-items-center text-center">
-              <p className="rounded-full bg-ink/70 px-4 py-2 text-[10px] uppercase tracking-[0.3em] text-bone backdrop-blur">
+              {/* <p className="rounded-full bg-ink/70 px-4 py-2 text-[10px] uppercase tracking-[0.3em] text-bone backdrop-blur">
                 Drop headshot at public/images/headshot.jpg
-              </p>
+              </p> */}
             </div>
           </div>
 
@@ -178,168 +171,3 @@ function Marquee() {
   );
 }
 
-function AboutTeaser() {
-  return (
-    <section className="container-x py-24 md:py-32">
-      <div className="grid items-start gap-12 lg:grid-cols-12">
-        <div className="lg:col-span-5">
-          <p className="eyebrow">About</p>
-          <h2 className="mt-6 text-5xl text-balance md:text-6xl">
-            Clinically grounded.
-            <br />
-            <span className="italic text-flame">Personally felt.</span>
-          </h2>
-        </div>
-        <div className="lg:col-span-7">
-          <Reveal>
-            <p className="text-balance text-lg text-bone md:text-xl">
-              Tiaera is a licensed master social worker with over 15 years of experience
-              in trauma-focused clinical care. She teaches the next generation of clinicians
-              as an Adjunct Professor at the University of Tennessee College of Social Work,
-              hosts the <em>Uncensored Wellness</em> podcast, and leads retreats and
-              masterclasses on family dynamics, identity, and recovery.
-            </p>
-          </Reveal>
-          <Reveal delay={0.1} className="mt-6">
-            <p className="text-bone">
-              She begins a PhD at Clark Atlanta&apos;s Whitney M. Young Jr. School of Social
-              Work in Fall 2026, researching racial disparities in higher academia, sexual
-              abuse trauma, and culturally responsive psychotherapy.
-            </p>
-          </Reveal>
-          <Reveal delay={0.2} className="mt-10">
-            <Link to="/about" className="inline-flex items-center gap-2 text-paper hover:text-flame">
-              Read her full story <ArrowUpRight size={16} />
-            </Link>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FeaturedMasterclass() {
-  const featured = masterclasses[1];
-  return (
-    <section className="container-x py-24 md:py-32">
-      <div className="flex items-end justify-between gap-6">
-        <div>
-          <p className="eyebrow">Upcoming masterclass</p>
-          <h2 className="mt-6 max-w-2xl text-5xl text-balance md:text-6xl">
-            Learn from a clinician you actually trust.
-          </h2>
-        </div>
-        <Link to="/masterclasses" className="hidden text-sm text-bone hover:text-flame md:inline-flex items-center gap-2">
-          See all <ArrowUpRight size={14} />
-        </Link>
-      </div>
-
-      <Reveal className="mt-14">
-        <div className="card group relative overflow-hidden p-8 md:p-12">
-          <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-8">
-              <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-widest text-bone">
-                <span className="rounded-full border border-bone/20 px-3 py-1">
-                  {featured.format}
-                </span>
-                <span className="inline-flex items-center gap-1">
-                  <CalendarDays size={12} /> {featured.date}
-                </span>
-                <span>{featured.duration}</span>
-              </div>
-              <h3 className="mt-6 max-w-2xl text-4xl text-balance md:text-5xl">
-                {featured.title}
-              </h3>
-              <p className="mt-5 max-w-xl text-bone">{featured.blurb}</p>
-            </div>
-            <div className="flex flex-col justify-between gap-6 lg:col-span-4">
-              <div className="rounded-2xl border border-bone/10 bg-ink p-6">
-                <p className="text-xs uppercase tracking-widest text-bone">Tuition</p>
-                <p className="mt-2 font-serif text-5xl text-paper">
-                  {featured.priceCents ? formatCents(featured.priceCents) : 'Free'}
-                </p>
-                <p className="mt-1 text-sm text-bone">{featured.seats}</p>
-              </div>
-              <Link to="/masterclasses" className="btn-primary justify-center">
-                Reserve a seat
-                <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-    </section>
-  );
-}
-
-function SpeakingCTA() {
-  return (
-    <section className="container-x py-24 md:py-32">
-      <Reveal>
-        <div className="relative overflow-hidden rounded-[2rem] bg-flame text-paper">
-          <div className="relative grid gap-10 p-10 md:grid-cols-12 md:p-16">
-            <div className="md:col-span-8">
-              <p className="text-xs uppercase tracking-[0.22em] text-paper/70">
-                Speaking · Workshops · Keynotes
-              </p>
-              <h2 className="mt-6 max-w-2xl text-5xl text-balance text-paper md:text-7xl">
-                Book Tiaera for your next event.
-              </h2>
-              <p className="mt-5 max-w-xl text-paper/80">
-                Conferences, universities, faith communities, corporate wellness — Tiaera
-                speaks where the work is hardest and the message lands clearest.
-              </p>
-            </div>
-            <div className="flex items-end md:col-span-4 md:justify-end">
-              <Link to="/speaking" className="btn-dark">
-                Check her calendar
-                <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-          <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-paper/10 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-ink/30 blur-3xl" />
-        </div>
-      </Reveal>
-    </section>
-  );
-}
-
-function ShopTeaser() {
-  return (
-    <section className="container-x pb-24 md:pb-32">
-      <div className="flex items-end justify-between gap-6">
-        <div>
-          <p className="eyebrow">Shop</p>
-          <h2 className="mt-6 max-w-2xl text-5xl text-balance md:text-6xl">
-            Books, tees, and a daily reminder.
-          </h2>
-        </div>
-        <Link to="/shop" className="hidden text-sm text-bone hover:text-flame md:inline-flex items-center gap-2">
-          Browse <ArrowUpRight size={14} />
-        </Link>
-      </div>
-      <Reveal className="mt-12">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {['Stay Encouraged Book', '"Your 24" Tee', 'Billboard Crewneck'].map((name, i) => (
-            <div
-              key={name}
-              className="card group relative aspect-[4/5] overflow-hidden p-6"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-flame/20 to-ink-soft transition-opacity duration-500 group-hover:opacity-80" />
-              <div className="relative flex h-full flex-col justify-between">
-                <span className="rounded-full border border-bone/20 bg-ink/40 px-3 py-1 text-[10px] uppercase tracking-widest text-bone backdrop-blur">
-                  Coming soon
-                </span>
-                <div>
-                  <p className="font-serif text-3xl text-paper">{name}</p>
-                  <p className="mt-2 text-sm text-bone">Drop {i + 1} · 2026</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Reveal>
-    </section>
-  );
-}

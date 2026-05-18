@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const links = [
+  { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/speaking', label: 'Speaking' },
   { to: '/masterclasses', label: 'Masterclasses' },
@@ -35,14 +36,14 @@ export default function Nav() {
       <nav className="container-x flex h-20 items-center justify-between">
         <Link to="/" aria-label="Tiaera Paulette, LMSW — home" className="group flex items-center">
           <img
-            src="/images/tp24_logo2.png"
+            src="/images/brand/tp24_logo_no_background.svg"
             alt="Tiaera Paulette, LMSW"
             width={56}
             height={56}
             className="h-12 w-12 transition-transform duration-500 group-hover:rotate-3 md:h-14 md:w-14"
           />
-          <span className="font-serif text-lg tracking-tight text-flame">
-            Tiaera <span className="text-bone">Paulette</span>
+          <span className="font-serif text-lg tracking-tight text-flame align-bottom ml-2 mt-6">
+            Tiaera <span className="text-bone">Paulette</span><span className="text-xs font-normal text-flame align-bottom">24</span>
           </span>
         </Link>
 
