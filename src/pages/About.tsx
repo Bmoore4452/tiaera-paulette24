@@ -2,22 +2,30 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, GraduationCap, BadgeCheck, Mic, BookOpen } from 'lucide-react';
 import PageTransition from '../components/layout/PageTransition';
 import Reveal from '../components/Reveal';
+import OrbitingCircles from '../components/OrbitingCircles';
 
 export default function About() {
   return (
     <PageTransition>
       <section className="container-x pt-36 pb-16 md:pt-48">
-        <p className="eyebrow">About Tiaera</p>
-        <h1 className="mt-6 max-w-4xl text-balance text-6xl md:text-8xl">
-          A clinician, a teacher, a witness to the work.
-        </h1>
-        <p className="mt-8 max-w-2xl text-balance text-lg text-bone md:text-xl">
-          Tiaera Paulette, LMSW, is a Georgia-licensed master social worker with over
-          15 years of practice in trauma-focused clinical care. She trains the next
-          generation of clinicians as an Adjunct Professor at the University of Tennessee
-          College of Social Work and prepares to begin her PhD at Clark Atlanta&apos;s
-          Whitney M. Young Jr. School of Social Work in Fall 2026.
-        </p>
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-7">
+            <p className="eyebrow">About Tiaera</p>
+            <h1 className="mt-6 text-balance text-6xl md:text-7xl xl:text-8xl">
+              A clinician, a teacher, a witness to the work.
+            </h1>
+            <p className="mt-8 max-w-2xl text-balance text-lg text-bone md:text-xl">
+              Tiaera Paulette, LMSW, is a Georgia-licensed master social worker with over
+              15 years of practice in trauma-focused clinical care. She trains the next
+              generation of clinicians as an Adjunct Professor at the University of Tennessee
+              College of Social Work and prepares to begin her PhD at Clark Atlanta&apos;s
+              Whitney M. Young Jr. School of Social Work in Fall 2026.
+            </p>
+          </div>
+          <div className="lg:col-span-5">
+            <SchoolPrideOrbit />
+          </div>
+        </div>
       </section>
 
       <section className="container-x py-16">
@@ -82,8 +90,8 @@ export default function About() {
             <h2 className="mt-6 text-4xl text-balance md:text-5xl">Licensure & certifications.</h2>
           </div>
           <div className="lg:col-span-8 grid gap-3 text-paper md:grid-cols-2">
-            <Cred title="LMSW" sub="Georgia #007366" />
-            <Cred title="Formerly LMSW" sub="South Carolina #10196" />
+            <Cred title="LMSW" sub="Georgia" />
+            <Cred title="Formerly LMSW" sub="South Carolina" />
             <Cred title="TF-CBT" sub="Trauma-Focused CBT" />
             <Cred title="CPR / CPI" sub="Certified" />
             <Cred title="CANS / ANSA" sub="Certified" />
@@ -137,6 +145,60 @@ function Cred({ title, sub }: { title: string; sub: string }) {
     <div className="flex items-baseline justify-between rounded-2xl border border-bone/10 px-5 py-4">
       <span className="font-serif text-xl">{title}</span>
       <span className="text-xs uppercase tracking-widest text-bone">{sub}</span>
+    </div>
+  );
+}
+
+function SchoolBadge({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="grid h-full w-full place-items-center rounded-full bg-paper p-2 shadow-2xl shadow-flame/10">
+      <img src={src} alt={alt} className="max-h-full max-w-full object-contain" loading="lazy" />
+    </div>
+  );
+}
+
+function SchoolPrideOrbit() {
+  return (
+    <div
+      className="relative mx-auto aspect-square w-full max-w-[480px] overflow-hidden rounded-3xl border border-bone/10 bg-ink-soft/40"
+      aria-label="Schools Tiaera is associated with"
+    >
+      {/* center brand mark — anchored at the right edge so its right half is clipped */}
+      <div className="absolute left-full top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+        <img
+          src="/images/brand/tp24_logo_no_background.svg"
+          alt=""
+          aria-hidden
+          className="h-24 w-24 drop-shadow-[0_8px_30px_rgba(242,5,44,0.4)] md:h-28 md:w-28"
+        />
+      </div>
+
+      {/* outer ring — slower, reverse direction */}
+      <OrbitingCircles
+        radius={200}
+        duration={36}
+        iconSize={72}
+        originX="100%"
+        originY="50%"
+        reverse
+      >
+        <SchoolBadge src="/images/brand/CAU_COLOR.svg" alt="Clark Atlanta University" />
+        <SchoolBadge src="/images/brand/power_t.svg" alt="University of Tennessee" />
+        <SchoolBadge src="/images/brand/CAU_COLOR.svg" alt="Clark Atlanta University" />
+        <SchoolBadge src="/images/brand/power_t.svg" alt="University of Tennessee" />
+      </OrbitingCircles>
+
+      {/* inner ring — faster, forward */}
+      <OrbitingCircles
+        radius={120}
+        duration={22}
+        iconSize={56}
+        originX="100%"
+        originY="50%"
+      >
+        <SchoolBadge src="/images/brand/power_t.svg" alt="University of Tennessee" />
+        <SchoolBadge src="/images/brand/CAU_COLOR.svg" alt="Clark Atlanta University" />
+      </OrbitingCircles>
     </div>
   );
 }

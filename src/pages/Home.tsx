@@ -32,17 +32,17 @@ function Hero() {
             transition={{ duration: 0.6, ease }}
             className="eyebrow"
           >
-            Therapist · Professor · Speaker · Author
+            Therapist · Professor · Speaker · Author · Life Coach
           </motion.p>
 
-          <h1 className="display mt-6 text-paper text-[clamp(3.25rem,9vw,8rem)]">
+          <h1 className="display mt-6 text-paper text-[clamp(2.25rem,8vw,8rem)]">
             <motion.span
               initial={prefersReduced ? false : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.05, ease }}
               className="block"
             >
-              Your 24
+             Each day has a gift of  
             </motion.span>
             <motion.span
               initial={prefersReduced ? false : { opacity: 0, y: 30 }}
@@ -50,7 +50,7 @@ function Hero() {
               transition={{ duration: 0.8, delay: 0.18, ease }}
               className="block italic text-flame"
             >
-              is a gift.
+             24 hours.
             </motion.span>
           </h1>
 
@@ -60,9 +60,8 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.4, ease }}
             className="mt-8 max-w-xl text-balance text-lg text-bone md:text-xl"
           >
-            Don&apos;t let one bad moment own the whole day. I&apos;m Tiaera —
-            a licensed therapist, professor, and speaker helping people protect their peace
-            and stay encouraged.
+             Don’t allow one bad one to consume the other 23. I&apos;m Tiaera —
+            and I've made it my life's mission to help people unpack, heal, and evolve into their healthiest and most empowered selves.
           </motion.p>
 
           <motion.div
@@ -86,8 +85,8 @@ function Hero() {
             transition={{ duration: 1, delay: 0.9 }}
             className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-4 text-sm text-bone"
           >
-            <Stat label="UT 40 Under 40" value="2024" />
-            <Stat label="Adjunct Professor" value="UTK CSW" />
+            <Stat label="University of Tennessee  40 Under 40" value="2024" />
+            <Stat label="Adjunct Professor" value="Tennessee BSW" />
             <Stat label="Incoming PhD" value="Clark Atlanta '26" />
           </motion.div>
         </div>
@@ -99,14 +98,14 @@ function Hero() {
           transition={{ duration: 0.9, delay: 0.3, ease }}
           className="relative lg:col-span-5"
         >
-          <div className="relative mx-auto aspect-4/5 w-full max-w-md overflow-hidden rounded-4xl border border-bone/10 bg-ink-soft">
+          <div className="relative mx-auto aspect-2/3 w-full max-w-md overflow-hidden rounded-4xl border border-bone/10 bg-ink-soft">
             {/* Headshot placeholder — replace public/images/headshot.jpg */}
-            <div
-              className="absolute inset-0 bg-cover"
-              style={{ backgroundImage: 'url(/images/brand/red_headshot.png)' }}
-              aria-hidden
+            <img
+              src="/images/brand/black_white_headshot.jpg"
+              alt="Tiaera Paulette headshot"
+              className="absolute inset-0 h-full w-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-ink/90 via-ink/0 to-transparent" />
             <div className="absolute inset-x-0 top-0 flex items-start justify-between p-6">
               <span className="inline-flex items-center gap-2 rounded-full bg-paper/10 px-3 py-1 text-xs uppercase tracking-widest text-paper backdrop-blur">
                 <Sparkles size={12} className="text-flame" /> Now booking 2026
@@ -152,6 +151,7 @@ function Marquee() {
     'Speaker',
     'Podcast Host',
     'Stay Encouraged',
+    'Life Coach'
   ];
   return (
     <div className="border-y border-bone/10 bg-ink py-6 overflow-hidden">

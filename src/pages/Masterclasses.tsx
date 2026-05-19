@@ -1,156 +1,159 @@
 import { useState } from 'react';
-import { ArrowRight, CalendarDays, CheckCircle2, Loader2 } from 'lucide-react';
+import { ArrowRight, Check, Clock, Loader2, Sparkles } from 'lucide-react';
 import PageTransition from '../components/layout/PageTransition';
 import Reveal from '../components/Reveal';
-import { masterclasses, type Masterclass } from '../data/masterclasses';
+import { programs, type Program, type Tier } from '../data/programs';
 import { formatCents } from '../lib/format';
 import { startCheckout } from '../lib/stripe';
 
 export default function Masterclasses() {
   return (
     <PageTransition>
-      <section className="container-x pt-36 pb-16 md:pt-48">
+      <section className="container-x pt-36 pb-12 md:pt-48">
         <p className="eyebrow">Masterclasses</p>
         <h1 className="mt-6 max-w-4xl text-balance text-6xl md:text-8xl">
-          Learn live. <span className="italic text-flame">Leave changed.</span>
+          Pick your pace. <span className="italic text-flame">Pick your tier.</span>
         </h1>
         <p className="mt-8 max-w-2xl text-balance text-lg text-bone md:text-xl">
-          Clinician-led sessions on trauma, family dynamics, and protecting your peace.
-          Some are free. Others are deep dives with materials and follow-up.
+          Two programs — one self-paced, one live with a cohort — each with three tiers
+          of access. Move at your own speed or commit to a group; either way, the work
+          meets you where you are.
         </p>
       </section>
 
-      <section className="container-x py-12 grid gap-6">
-        {masterclasses.map((m, i) => (
-          <Reveal key={m.id} delay={i * 0.05}>
-            <Card m={m} />
-          </Reveal>
+      <section className="container-x py-12 md:py-16 space-y-24 md:space-y-32">
+        {programs.map((program, i) => (
+          <ProgramBlock key={program.id} program={program} index={i} />
         ))}
       </section>
     </PageTransition>
   );
 }
 
-function Card({ m }: { m: Masterclass }) {
-  const isFree = m.priceCents === null;
+function ProgramBlock({ program, index }: { program: Program; index: number }) {
   return (
-    <div className="card group overflow-hidden p-8 md:p-12">
-      <div className="grid gap-8 lg:grid-cols-12">
-        <div className="lg:col-span-8">
-          <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-widest text-bone">
-            <span className={`rounded-full px-3 py-1 ${isFree ? 'bg-flame text-paper' : 'border border-bone/20'}`}>
-              {isFree ? 'Free' : 'Paid'}
-            </span>
-            <span className="rounded-full border border-bone/20 px-3 py-1">{m.format}</span>
+    <Reveal delay={index * 0.04}>
+      <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+        <header className="lg:col-span-5">
+          <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.22em] text-bone">
+            <span className="rounded-full border border-bone/20 px-3 py-1">{program.format}</span>
             <span className="inline-flex items-center gap-1">
-              <CalendarDays size={12} /> {m.date}
+              <Clock size={12} /> {program.duration}
             </span>
-            <span>{m.duration}</span>
           </div>
-          <h3 className="mt-6 max-w-2xl text-4xl text-balance md:text-5xl">{m.title}</h3>
-          <p className="mt-4 max-w-2xl text-bone">{m.blurb}</p>
-          {m.seats && <p className="mt-4 text-xs uppercase tracking-widest text-bone">{m.seats}</p>}
-        </div>
-        <div className="flex flex-col justify-between gap-6 lg:col-span-4">
-          <div className="rounded-2xl border border-bone/10 bg-ink p-6">
-            <p className="text-xs uppercase tracking-widest text-bone">Tuition</p>
-            <p className="mt-2 font-serif text-5xl text-paper">
-              {isFree ? 'Free' : formatCents(m.priceCents!)}
-            </p>
+          <h2 className="mt-6 text-balance text-4xl md:text-5xl lg:text-6xl">
+            {program.title}
+          </h2>
+          <p className="mt-5 max-w-lg text-bone">{program.blurb}</p>
+        </header>
+
+        <div className="lg:col-span-7">
+          <div className="grid gap-5 md:grid-cols-3">
+            {program.tiers.map((tier) => (
+              <TierCard key={tier.name} tier={tier} programTitle={program.title} />
+            ))}
           </div>
-          {isFree ? <FreeSignup id={m.id} title={m.title} /> : <PaidRegister m={m} />}
         </div>
       </div>
-    </div>
+    </Reveal>
   );
 }
 
-function FreeSignup({ id, title }: { id: string; title: string }) {
-  const [email, setEmail] = useState('');
-  const [state, setState] = useState<'idle' | 'submitting' | 'done' | 'error'>('idle');
+function TierCard({ tier, programTitle }: { tier: Tier; programTitle: string }) {
+  const isPremium = tier.highlight === true;
+  return (
+    <article
+      className={[
+        'relative flex flex-col rounded-3xl p-6 transition-all duration-500 md:p-7',
+        isPremium
+          ? 'border-2 border-flame bg-ink-soft shadow-2xl shadow-flame/20 md:-translate-y-2'
+          : 'border border-bone/10 bg-ink-soft/40 hover:border-bone/30',
+      ].join(' ')}
+    >
+      {isPremium && (
+        <span className="absolute -top-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-flame px-3 py-1 text-[10px] font-medium uppercase tracking-[0.22em] text-paper">
+          <Sparkles size={11} /> Best value
+        </span>
+      )}
+
+      <div className="flex items-center justify-between">
+        <p className="font-serif text-xl text-paper">{tier.name}</p>
+        {tier.badge && (
+          <span
+            className={[
+              'rounded-full px-2.5 py-0.5 text-[10px] uppercase tracking-[0.22em]',
+              isPremium ? 'bg-paper/10 text-paper' : 'border border-bone/20 text-bone',
+            ].join(' ')}
+          >
+            {tier.badge}
+          </span>
+        )}
+      </div>
+
+      <div className="mt-4 flex items-baseline gap-2">
+        <span className="font-serif text-5xl text-paper">{formatCents(tier.priceCents)}</span>
+        <span className="text-xs uppercase tracking-widest text-bone">one-time</span>
+      </div>
+
+      <ul className="mt-6 flex-1 space-y-3 text-sm text-bone">
+        {tier.perks.map((perk) => (
+          <li key={perk} className="flex gap-3">
+            <Check size={16} className="mt-0.5 shrink-0 text-flame" />
+            <span>{perk}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-8 pt-4">
+        <RegisterButton tier={tier} programTitle={programTitle} primary={isPremium} />
+      </div>
+    </article>
+  );
+}
+
+function RegisterButton({
+  tier,
+  programTitle,
+  primary,
+}: {
+  tier: Tier;
+  programTitle: string;
+  primary: boolean;
+}) {
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setState('submitting');
+  async function onClick() {
+    setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/register-free', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ masterclassId: id, masterclassTitle: title, email }),
-      });
-      if (!res.ok) throw new Error(await res.text());
-      setState('done');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong');
-      setState('error');
-    }
-  }
-
-  if (state === 'done') {
-    return (
-      <div className="flex items-center gap-3 rounded-2xl border border-flame/40 bg-flame/10 px-5 py-4 text-sm">
-        <CheckCircle2 size={18} className="text-flame" />
-        <span>You&apos;re in. Watch your inbox.</span>
-      </div>
-    );
-  }
-
-  return (
-    <form onSubmit={onSubmit} className="space-y-2">
-      <label className="text-xs uppercase tracking-widest text-bone">Email to reserve</label>
-      <div className="flex gap-2">
-        <input
-          required
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@example.com"
-          className="w-full rounded-full border border-bone/20 bg-ink px-4 py-3 text-sm text-paper placeholder:text-bone/60 focus:border-flame focus:outline-none"
-        />
-        <button
-          type="submit"
-          disabled={state === 'submitting'}
-          className="btn-primary shrink-0 disabled:opacity-60"
-        >
-          {state === 'submitting' ? <Loader2 size={16} className="animate-spin" /> : 'Reserve'}
-        </button>
-      </div>
-      {error && <p className="text-xs text-flame">{error}</p>}
-    </form>
-  );
-}
-
-function PaidRegister({ m }: { m: Masterclass }) {
-  const [loading, setLoading] = useState(false);
-  const [err, setErr] = useState<string | null>(null);
-
-  async function go() {
-    setLoading(true);
-    setErr(null);
-    try {
       await startCheckout({
-        priceId: m.stripePriceId,
-        name: m.title,
-        amountCents: m.priceCents!,
+        priceId: tier.stripePriceId,
+        name: `${programTitle} — ${tier.name}${tier.badge ? ` (${tier.badge})` : ''}`,
+        amountCents: tier.priceCents,
       });
     } catch (e) {
-      setErr(e instanceof Error ? e.message : 'Checkout error');
+      setError(e instanceof Error ? e.message : 'Checkout error');
       setLoading(false);
     }
   }
 
   return (
     <div>
-      <button onClick={go} disabled={loading} className="btn-primary w-full justify-center disabled:opacity-60">
-        {loading ? <Loader2 size={16} className="animate-spin" /> : (
+      <button
+        onClick={onClick}
+        disabled={loading}
+        className={`w-full justify-center ${primary ? 'btn-primary' : 'btn-ghost'} disabled:opacity-60`}
+      >
+        {loading ? (
+          <Loader2 size={16} className="animate-spin" />
+        ) : (
           <>
             Register <ArrowRight size={16} />
           </>
         )}
       </button>
-      {err && <p className="mt-2 text-xs text-flame">{err}</p>}
+      {error && <p className="mt-2 text-xs text-flame">{error}</p>}
     </div>
   );
 }

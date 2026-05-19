@@ -92,7 +92,28 @@
   }
 }
 
+@keyframes orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(calc(var(--angle) * 1deg))
+      translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(calc(var(--angle) * 1deg + 360deg))
+      translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg - 360deg));
+  }
+}
+
 @layer utilities {
+  .animate-orbit {
+    animation: orbit calc(var(--duration) * 1s) linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-orbit {
+      animation: none;
+    }
+  }
+
   .text-balance {
     text-wrap: balance;
   }
