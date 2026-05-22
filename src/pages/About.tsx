@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, GraduationCap, BadgeCheck, Mic, BookOpen } from 'lucide-react';
+import { ArrowRight, GraduationCap, Mic, BookOpen, Award, Trophy, Users, Sparkles } from 'lucide-react';
 import PageTransition from '../components/layout/PageTransition';
 import Reveal from '../components/Reveal';
-import OrbitingCircles from '../components/OrbitingCircles';
+
 
 export default function About() {
   return (
@@ -22,16 +22,12 @@ export default function About() {
               Whitney M. Young Jr. School of Social Work in Fall 2026.
             </p>
           </div>
-          <div className="lg:col-span-5">
-            <SchoolPrideOrbit />
-          </div>
         </div>
       </section>
 
       <section className="container-x py-16">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2">
           <Stat icon={<GraduationCap size={18} />} label="Master of Science in Social Work" value="University of Tennessee · 2009" />
-          <Stat icon={<BadgeCheck size={18} />} label="Honor" value="UT 40 Under 40 · Class of 2024" />
           <Stat icon={<GraduationCap size={18} />} label="Incoming PhD" value="Clark Atlanta · Fall 2026" />
         </div>
       </section>
@@ -53,7 +49,7 @@ export default function About() {
             <Lane
               icon={<GraduationCap size={18} />}
               title="Teaching"
-              body="Adjunct Professor at UT College of Social Work. Course design and instruction on the biological, psychological, and social dimensions of substance use, aligned to CSWE standards."
+              body="Adjunct Professor at University of Tennessee College of Social Work. Course design and instruction on the biological, psychological, and social dimensions of substance use, aligned to CSWE standards."
             />
             <Lane
               icon={<Mic size={18} />}
@@ -64,6 +60,42 @@ export default function About() {
               icon={<BookOpen size={18} />}
               title="Writing"
               body="Author of educational and self-help literature on family resilience, identity, and protecting your peace."
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="container-x py-16">
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="eyebrow">Recognition</p>
+            <h2 className="mt-6 text-4xl text-balance md:text-5xl">
+              Awards & <span className="italic text-flame">achievements.</span>
+            </h2>
+          </div>
+          <div className="lg:col-span-8 grid gap-4 sm:grid-cols-2">
+            <AwardCard
+              icon={<Trophy size={18} />}
+              title="40 Under 40 Honoree"
+              org="University of Tennessee"
+              year="Class of 2024"
+            />
+            <AwardCard
+              icon={<Award size={18} />}
+              title="University Trailblazer Award Honoree"
+              org="University of Tennessee Black Alumni Council"
+              year="2024"
+            />
+            <AwardCard
+              icon={<Users size={18} />}
+              title="Campus Relations Co-Chair"
+              org="University of Tennessee Black Alumni Council"
+            />
+            <AwardCard
+              icon={<Sparkles size={18} />}
+              title="Inaugural First-Generation Doctoral Student Program"
+              org="University of Tennessee"
+              year="2024"
             />
           </div>
         </div>
@@ -140,65 +172,34 @@ function Lane({ icon, title, body }: { icon: React.ReactNode; title: string; bod
   );
 }
 
+function AwardCard({
+  icon,
+  title,
+  org,
+  year,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  org: string;
+  year?: string;
+}) {
+  return (
+    <div className="card p-6">
+      <div className="flex items-center justify-between">
+        <span className="text-flame">{icon}</span>
+        {year && <span className="text-xs uppercase tracking-widest text-bone">{year}</span>}
+      </div>
+      <p className="mt-4 font-serif text-2xl text-paper">{title}</p>
+      <p className="mt-2 text-sm text-bone">{org}</p>
+    </div>
+  );
+}
+
 function Cred({ title, sub }: { title: string; sub: string }) {
   return (
     <div className="flex items-baseline justify-between rounded-2xl border border-bone/10 px-5 py-4">
       <span className="font-serif text-xl">{title}</span>
       <span className="text-xs uppercase tracking-widest text-bone">{sub}</span>
-    </div>
-  );
-}
-
-function SchoolBadge({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="grid h-full w-full place-items-center rounded-full bg-paper p-2 shadow-2xl shadow-flame/10">
-      <img src={src} alt={alt} className="max-h-full max-w-full object-contain" loading="lazy" />
-    </div>
-  );
-}
-
-function SchoolPrideOrbit() {
-  return (
-    <div
-      className="relative mx-auto aspect-square w-full max-w-[480px] overflow-hidden rounded-3xl border border-bone/10 bg-ink-soft/40"
-      aria-label="Schools Tiaera is associated with"
-    >
-      {/* center brand mark — anchored at the right edge so its right half is clipped */}
-      <div className="absolute left-full top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-        <img
-          src="/images/brand/tp24_logo_no_background.svg"
-          alt=""
-          aria-hidden
-          className="h-24 w-24 drop-shadow-[0_8px_30px_rgba(242,5,44,0.4)] md:h-28 md:w-28"
-        />
-      </div>
-
-      {/* outer ring — slower, reverse direction */}
-      <OrbitingCircles
-        radius={200}
-        duration={36}
-        iconSize={72}
-        originX="100%"
-        originY="50%"
-        reverse
-      >
-        <SchoolBadge src="/images/brand/CAU_COLOR.svg" alt="Clark Atlanta University" />
-        <SchoolBadge src="/images/brand/power_t.svg" alt="University of Tennessee" />
-        <SchoolBadge src="/images/brand/CAU_COLOR.svg" alt="Clark Atlanta University" />
-        <SchoolBadge src="/images/brand/power_t.svg" alt="University of Tennessee" />
-      </OrbitingCircles>
-
-      {/* inner ring — faster, forward */}
-      <OrbitingCircles
-        radius={120}
-        duration={22}
-        iconSize={56}
-        originX="100%"
-        originY="50%"
-      >
-        <SchoolBadge src="/images/brand/power_t.svg" alt="University of Tennessee" />
-        <SchoolBadge src="/images/brand/CAU_COLOR.svg" alt="Clark Atlanta University" />
-      </OrbitingCircles>
     </div>
   );
 }

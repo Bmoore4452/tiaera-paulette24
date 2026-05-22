@@ -1,0 +1,714 @@
+{
+  "title": "The Time Mastery Masterclass",
+  "subtitle": "Reclaim your 24.",
+  "overview": "This 8-week masterclass will empower you to reclaim control over your time, eliminate distractions, set boundaries, and optimize your energy. By the end of the course you'll have built a personalized time-management system that lets you achieve more with less effort, focus on your long-term goals, and lead a more balanced life.",
+  "outcomes": [
+    "Understand how to manage your time effectively through time-blocking, eliminating distractions, and prioritizing what matters.",
+    "Feel empowered to set boundaries, protect your energy, and balance work with personal life.",
+    "Implement sustainable systems that maintain your progress toward long-term goals — without burning out."
+  ],
+  "weeks": [
+    {
+      "id": "week-1",
+      "number": 1,
+      "title": "Introduction to Time Mastery",
+      "theme": "Redefining Productivity",
+      "objective": "Lay the foundation for understanding time mastery and productivity from a holistic perspective.",
+      "topics": [
+        {
+          "id": "what-is-time-mastery",
+          "title": "What is Time Mastery?",
+          "body": [
+            "Time mastery isn't about squeezing more tasks into a day. It's about becoming intentional with the 24 hours you already have — directing them toward what genuinely matters to you instead of letting them drain away through reaction and habit.",
+            "Where time management treats your calendar like a container to fill, time mastery treats your attention, energy, and values as the real resources. The goal is alignment: your hours reflecting your priorities, not your inbox."
+          ],
+          "takeaways": [
+            "You can't make more time — you can only choose where it goes.",
+            "Mastery is intention plus self-awareness, not speed.",
+            "A full schedule and a meaningful one are not the same thing."
+          ]
+        },
+        {
+          "id": "myth-of-multitasking",
+          "title": "The Myth of Multitasking",
+          "body": [
+            "What feels like multitasking is really rapid task-switching, and every switch carries a hidden cost. Your brain has to reload context each time, and studies consistently show this fragments focus, slows you down, and increases errors.",
+            "The antidote is single-tasking: giving one thing your full attention until it reaches a natural stopping point. It feels slower in the moment but produces better work in less total time."
+          ],
+          "takeaways": [
+            "Multitasking is task-switching in disguise — and switching is expensive.",
+            "Each interruption can cost several minutes to fully refocus.",
+            "Depth beats breadth: one task, fully done, beats five half-done."
+          ]
+        },
+        {
+          "id": "productive-vs-busy",
+          "title": "Productive vs. Being Busy",
+          "body": [
+            "Busy is a feeling of motion; productive is a measure of results. It's easy to fill a day with activity — emails, errands, meetings — and end it exhausted yet no closer to anything that matters.",
+            "Productivity asks a harder question: did today move me toward my goals? Mastering your time means trading the comfort of constant motion for the clarity of meaningful progress."
+          ],
+          "takeaways": [
+            "Activity is not achievement.",
+            "Ask of any task: 'Is this moving me forward, or just keeping me occupied?'",
+            "Protect your energy for high-value work, not just visible work."
+          ]
+        },
+        {
+          "id": "self-awareness",
+          "title": "Self-Awareness in Managing Time",
+          "body": [
+            "You can't change a pattern you can't see. Self-awareness — noticing how you actually spend your hours, when you focus best, and what pulls you off course — is the foundation everything else in this course is built on.",
+            "This is why we begin with a Time Audit. Before you optimize anything, you observe honestly and without judgment. The data will surprise you."
+          ],
+          "takeaways": [
+            "Awareness precedes change.",
+            "Track first, judge later — honesty is the goal, not perfection.",
+            "Your instincts about where your time goes are usually wrong."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "time-audit",
+          "title": "Time Audit",
+          "kind": "time-audit",
+          "summary": "Track how you spend your time across a week, then reflect on the patterns you uncover."
+        },
+        {
+          "id": "true-productivity-discussion",
+          "title": "What Does True Productivity Mean to You?",
+          "kind": "discussion",
+          "summary": "A group discussion prompt. Capture your own thoughts here before you share with the cohort.",
+          "prompts": [
+            "What does 'being productive' actually mean to you — beyond getting things done?",
+            "Whose definition of productivity have you been living by? Is it yours?"
+          ]
+        },
+        {
+          "id": "goal-setting",
+          "title": "Goal Setting",
+          "kind": "reflection",
+          "summary": "Identify one key area of your life where you want to improve your time mastery.",
+          "prompts": [
+            "Name the one area of your life where better time mastery would change the most (e.g. work focus, family presence, health, rest).",
+            "Why this area, and why now?",
+            "What would 'mastered' look like here in eight weeks?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-2",
+      "number": 2,
+      "title": "Time Blocking",
+      "theme": "The Power of Focused Work",
+      "objective": "Learn how to structure your day using time blocks that ensure deep focus and real productivity.",
+      "topics": [
+        {
+          "id": "what-is-time-blocking",
+          "title": "What is Time Blocking?",
+          "body": [
+            "Time blocking is the practice of assigning every part of your day to a specific purpose ahead of time, instead of working from an open-ended to-do list. Rather than asking 'what should I do now?' all day, you decide once and let the schedule carry you.",
+            "It revolutionizes your schedule because it forces you to confront how much time you really have and to give your priorities an actual place to live on the calendar."
+          ],
+          "takeaways": [
+            "A to-do list tells you what; a time block tells you when.",
+            "If it doesn't have a block, it probably won't happen.",
+            "Blocking turns intentions into appointments."
+          ]
+        },
+        {
+          "id": "prioritize-high-impact",
+          "title": "Designing a Day Around High-Impact Tasks",
+          "body": [
+            "Not all hours are equal, and not all tasks deserve equal hours. Design your day by placing your most important, highest-impact work into your sharpest, most protected blocks — usually earlier in the day before the world starts making requests of you.",
+            "Everything else — email, admin, small tasks — gets batched into lower-energy windows. You build the day around the work that matters, not around whatever shouts loudest."
+          ],
+          "takeaways": [
+            "Put your biggest rock in the calendar first.",
+            "Protect one deep-work block before reacting to anyone else.",
+            "Batch shallow tasks instead of letting them interrupt deep ones."
+          ]
+        },
+        {
+          "id": "balance-work-personal",
+          "title": "Balancing Work and Personal Time",
+          "body": [
+            "Time blocking isn't only for work. Personal time — rest, relationships, movement, joy — deserves blocks too, or it will quietly get colonized by work that expands to fill every gap.",
+            "Blocking personal time is a form of respect for your whole life. A protected dinner or a real day off is a commitment, not a maybe."
+          ],
+          "takeaways": [
+            "Schedule rest and relationships, or work will take their place.",
+            "A block for 'off' is as legitimate as a block for 'on'.",
+            "Boundaries on the calendar become boundaries in life."
+          ]
+        },
+        {
+          "id": "avoiding-distractions-blocks",
+          "title": "Protecting Your Blocks from Distraction",
+          "body": [
+            "A block is only as good as your ability to honor it. Going into a focus block, decide in advance how you'll handle the predictable interruptions: phone away, notifications off, a closed door or a signal to others.",
+            "Treat the start of a block like a small ritual — same setup each time — so your brain learns to drop into focus quickly."
+          ],
+          "takeaways": [
+            "Decide your distraction defenses before the block starts.",
+            "A consistent start ritual speeds up focus.",
+            "Defend the block like an appointment with someone important — because it is."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "time-blocking-exercise",
+          "title": "Time-Blocking Exercise",
+          "kind": "time-blocking",
+          "summary": "Build a time-blocked schedule for your week, incorporating deep work, breaks, and personal activities."
+        },
+        {
+          "id": "focus-reflection",
+          "title": "Reflection: Where You Need More Focus",
+          "kind": "reflection",
+          "summary": "Look honestly at your schedule and where it overloads you.",
+          "prompts": [
+            "Which tasks in your schedule need more focused, protected time blocks?",
+            "Where are you currently overloading yourself, and what could you move, shrink, or remove?"
+          ]
+        },
+        {
+          "id": "time-blocking-sharing",
+          "title": "Group Sharing",
+          "kind": "discussion",
+          "summary": "Share a time-blocking technique that works for you, or an area where you struggle.",
+          "prompts": [
+            "What's one time-blocking technique that already works for you?",
+            "Where do you most often struggle to stick to your blocks?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-3",
+      "number": 3,
+      "title": "The Art of Saying No",
+      "theme": "Setting Boundaries to Protect Your Time",
+      "objective": "Set healthy boundaries with others and yourself to prevent time leakage and avoid burnout.",
+      "topics": [
+        {
+          "id": "importance-of-boundaries",
+          "title": "Why Boundaries Are Time Management",
+          "body": [
+            "Every yes is a no to something else. Without boundaries, your time leaks away into other people's priorities, and you wonder at day's end where it all went.",
+            "Boundaries aren't walls that shut people out — they're the structure that lets you show up fully for what you've actually committed to. Protecting your time is how you protect your capacity to care."
+          ],
+          "takeaways": [
+            "Every yes is a no elsewhere.",
+            "Boundaries protect your energy, not just your calendar.",
+            "You teach people how to treat your time by what you allow."
+          ]
+        },
+        {
+          "id": "saying-no-gracefully",
+          "title": "Saying 'No' Gracefully",
+          "body": [
+            "A good no is clear, kind, and brief. You don't owe a paragraph of justification — a warm, honest decline respects both you and the other person more than a resentful yes ever could.",
+            "Useful scripts: 'That doesn't work for me right now, but thank you for thinking of me.' Or: 'I can't take that on, but here's what I can offer.' Practice makes the words come easier under pressure."
+          ],
+          "takeaways": [
+            "No is a complete sentence; you don't need a long excuse.",
+            "Decline the request, not the relationship — stay warm.",
+            "Have a few go-to phrases ready before you need them."
+          ]
+        },
+        {
+          "id": "managing-expectations",
+          "title": "Managing Others' Expectations",
+          "body": [
+            "Much of our overcommitment comes from assumptions — others assuming you're available, and you assuming you must be. Naming your availability and response times in advance prevents the slow creep of unspoken expectations.",
+            "Communicating a boundary early ('I check messages twice a day') is far easier than walking one back after people have grown used to instant access."
+          ],
+          "takeaways": [
+            "Set expectations early — it's easier than resetting them later.",
+            "Unspoken assumptions become other people's claims on your time.",
+            "Predictability is a gift to others, not a withdrawal."
+          ]
+        },
+        {
+          "id": "eliminating-time-wasters",
+          "title": "Recognizing Time-Wasting Activities",
+          "body": [
+            "Some time-wasters are obvious; others hide as 'productive' habits — over-checking email, unnecessary meetings, perfecting things no one will notice. The first step is naming them honestly.",
+            "Once named, decide for each: eliminate, reduce, or delegate. Reclaiming even one recurring time-waster compounds across a year."
+          ],
+          "takeaways": [
+            "Some time-wasters disguise themselves as work.",
+            "For each one, ask: eliminate, reduce, or delegate?",
+            "Small recurring leaks add up to enormous losses over time."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "boundary-setting-worksheet",
+          "title": "Boundary-Setting Worksheet",
+          "kind": "boundary-setting",
+          "summary": "Identify the areas of your life where you need better boundaries, and design how you'll set them."
+        },
+        {
+          "id": "practice-no",
+          "title": "Practice Saying No",
+          "kind": "reflection",
+          "summary": "Role-play scenarios where saying 'no' is necessary to protect your time. Draft the words you'd actually use.",
+          "prompts": [
+            "Describe a recent situation where you said yes but wished you'd said no.",
+            "Write the exact words you would use to decline it gracefully next time.",
+            "What feeling comes up when you imagine saying no — guilt, fear, relief? Name it."
+          ]
+        },
+        {
+          "id": "boundary-reflection",
+          "title": "Reflection: Where You Struggle",
+          "kind": "reflection",
+          "summary": "Pinpoint a recurring boundary you find hard to hold.",
+          "prompts": [
+            "What is one situation where you consistently struggle to set boundaries?",
+            "What's underneath that difficulty — and how could you handle it more effectively?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-4",
+      "number": 4,
+      "title": "Eliminating Distractions",
+      "theme": "Creating an Environment for Focus",
+      "objective": "Minimize distractions in your environment so you can stay focused on your priorities.",
+      "topics": [
+        {
+          "id": "types-of-distractions",
+          "title": "External vs. Internal Distractions",
+          "body": [
+            "External distractions come at you — notifications, noise, interruptions, the endless ping of other people's urgency. Internal distractions come from within — wandering thoughts, anxiety, boredom, the urge to check something 'real quick.'",
+            "They require different defenses. External distractions you remove or block. Internal ones you notice, name, and gently return from. Most of us focus only on the external and ignore the harder internal work."
+          ],
+          "takeaways": [
+            "External distractions you block; internal ones you notice and release.",
+            "The phone in another room beats the phone face-down.",
+            "Internal distraction is often discomfort in disguise."
+          ]
+        },
+        {
+          "id": "distraction-free-environment",
+          "title": "Building a Distraction-Free Environment",
+          "body": [
+            "Your environment is constantly voting on your behavior. A distraction-free space works across three layers: physical (a clear desk, a closed door), digital (closed tabs, silenced apps), and mental (a clear head, a parked thought-list).",
+            "Design the easy path to be the focused one. The less willpower your setup demands, the more focus you'll actually have."
+          ],
+          "takeaways": [
+            "Design the environment so focus is the path of least resistance.",
+            "Address all three layers: physical, digital, mental.",
+            "Willpower is unreliable; environment is dependable."
+          ]
+        },
+        {
+          "id": "digital-distractions",
+          "title": "Managing Digital Distractions",
+          "body": [
+            "Apps are engineered to capture your attention — that's their business model. Fighting them with willpower alone is a losing game, so change the defaults instead: turn off non-essential notifications, log out of the apps that pull you, keep the phone out of arm's reach during focus.",
+            "Friction is your friend. Every extra step between you and a distraction gives your intention a chance to win."
+          ],
+          "takeaways": [
+            "Change the defaults; don't rely on willpower against billion-dollar design.",
+            "Turn off notifications you didn't consciously choose to receive.",
+            "Add friction to distractions, remove friction from focus."
+          ]
+        },
+        {
+          "id": "deep-work",
+          "title": "The Role of Deep Work",
+          "body": [
+            "Deep work is the ability to focus without distraction on a cognitively demanding task. It's increasingly rare — and therefore increasingly valuable. The work that moves your life forward almost always requires it.",
+            "Deep work is a skill you build like a muscle: start with short protected stretches, remove distractions, and gradually extend your capacity for sustained, single-pointed focus."
+          ],
+          "takeaways": [
+            "Deep work is rare, valuable, and trainable.",
+            "Start small — even 30 protected minutes counts.",
+            "The highest-value work almost always demands undistracted focus."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "distraction-mapping",
+          "title": "Distraction Mapping",
+          "kind": "distraction-mapping",
+          "summary": "Identify the top distractions in your daily life and build a plan to eliminate or manage each one."
+        },
+        {
+          "id": "digital-detox",
+          "title": "Digital Detox Challenge",
+          "kind": "reflection",
+          "summary": "Commit to a window — a full day or a set block — where you completely disconnect from your devices.",
+          "prompts": [
+            "When will your detox happen, and how long will it last?",
+            "What will you do instead during that window?",
+            "What are you most afraid you'll miss — and is that fear accurate?"
+          ]
+        },
+        {
+          "id": "environment-makeover",
+          "title": "Environment Makeover",
+          "kind": "reflection",
+          "summary": "Redesign your primary workspace for optimal focus.",
+          "prompts": [
+            "What in your current workspace pulls your attention away from focus?",
+            "List three concrete changes you'll make to your physical and digital space."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-5",
+      "number": 5,
+      "title": "Energy Management",
+      "theme": "Working Smarter, Not Harder",
+      "objective": "Shift the focus from managing time to managing energy for maximum productivity and balance.",
+      "topics": [
+        {
+          "id": "energy-rhythms",
+          "title": "Your Natural Energy Rhythms (Chronotypes)",
+          "body": [
+            "You have a daily rhythm of energy — peaks where focus comes easily and troughs where it doesn't. Your chronotype describes the general shape of that rhythm: some people are sharpest in the morning, others hit their stride midday or late.",
+            "Fighting your chronotype wastes energy. When you learn your own pattern and schedule demanding work during your peaks, you accomplish more in less time and with far less strain."
+          ],
+          "takeaways": [
+            "Energy rises and falls in a daily rhythm — learn yours.",
+            "Schedule hard work during your peak, not against it.",
+            "There's no 'right' chronotype, only your own."
+          ]
+        },
+        {
+          "id": "energy-task-matching",
+          "title": "Matching Tasks to Energy Levels",
+          "body": [
+            "Demanding, creative, decision-heavy work belongs in your high-energy windows. Routine, low-stakes tasks — email, filing, errands — fit your low-energy troughs perfectly well.",
+            "Most people do this backwards: they spend their best hours on shallow tasks and attempt their hardest work when they're depleted. Simply reversing that can transform your output."
+          ],
+          "takeaways": [
+            "High-energy hours for high-stakes work; low-energy hours for low-stakes work.",
+            "Don't waste your peak on email.",
+            "Match the task to the tank you've got."
+          ]
+        },
+        {
+          "id": "breaks-and-recovery",
+          "title": "Breaks, Rest, and Recovery",
+          "body": [
+            "Focus is not a flat line you can sustain all day — it depletes and must be renewed. Strategic breaks aren't lost time; they're what make the rest of your time effective.",
+            "Recovery operates at every scale: short breaks within a work session, real evenings, genuine days off, and longer stretches of rest. Skipping recovery doesn't add hours — it just lowers the quality of all of them."
+          ],
+          "takeaways": [
+            "Breaks restore the focus that produces good work.",
+            "Recovery is part of the work, not a reward for it.",
+            "Rest at every scale: micro-breaks, evenings, days off."
+          ]
+        },
+        {
+          "id": "avoiding-burnout",
+          "title": "Managing Energy to Avoid Burnout",
+          "body": [
+            "Burnout isn't only about doing too much — it's about chronic depletion across your physical, mental, and emotional energy without adequate renewal. Each of these is a distinct reservoir that needs tending.",
+            "Managing energy means noticing which reservoir is running low and replenishing it deliberately: movement and sleep for physical, focus and learning for mental, connection and meaning for emotional."
+          ],
+          "takeaways": [
+            "Burnout is chronic depletion without renewal.",
+            "Physical, mental, and emotional energy are separate tanks.",
+            "Notice which reservoir is empty, then refill that one."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "energy-mapping",
+          "title": "Energy Mapping & Your Chronotype",
+          "kind": "energy-rhythms",
+          "summary": "Map your energy across the day, discover your chronotype, and align your hardest tasks with your peak times."
+        },
+        {
+          "id": "ninety-minute-formula",
+          "title": "The 90-Minute Focus Formula",
+          "kind": "reflection",
+          "summary": "Experiment with working in focused 90-minute blocks followed by real breaks.",
+          "prompts": [
+            "When in your day could you protect a single 90-minute focus block?",
+            "What will you do in the recovery break afterward to truly recharge?"
+          ]
+        },
+        {
+          "id": "energy-drain-reflection",
+          "title": "Reflection: What Drains You",
+          "kind": "reflection",
+          "summary": "Identify your biggest energy drains and how to handle them.",
+          "prompts": [
+            "Which recurring tasks or interactions drain your energy the most?",
+            "For each, could you delegate it, streamline it, or eliminate it?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-6",
+      "number": 6,
+      "title": "The 80/20 Rule",
+      "theme": "Focusing on What Truly Matters",
+      "objective": "Learn to focus on the few things that make the most impact in your life, personally and professionally.",
+      "topics": [
+        {
+          "id": "understanding-pareto",
+          "title": "Understanding the 80/20 Rule",
+          "body": [
+            "The Pareto Principle observes that roughly 80% of your results come from about 20% of your efforts. A small set of activities produces most of the value, while the majority produce comparatively little.",
+            "The skill is learning to see which 20% is yours. Once you can identify your vital few, you can pour your best energy there instead of spreading it evenly across everything."
+          ],
+          "takeaways": [
+            "A small share of your efforts drives most of your results.",
+            "The goal is to find and protect your 'vital few.'",
+            "Equal effort on everything is a quiet form of self-sabotage."
+          ]
+        },
+        {
+          "id": "high-leverage",
+          "title": "High-Leverage Over Busy Work",
+          "body": [
+            "High-leverage activities create outsized or lasting returns — a skill learned once and used forever, a relationship invested in, a system built that saves time daily. Busy work feels urgent but rarely compounds.",
+            "When you find yourself busy, pause and ask whether the task is high-leverage or simply available. Choosing leverage over busyness is the heart of working smarter."
+          ],
+          "takeaways": [
+            "High-leverage work compounds; busy work merely fills time.",
+            "Ask: 'Is this the highest-value thing I could do right now?'",
+            "Systems and skills pay you back repeatedly."
+          ]
+        },
+        {
+          "id": "simplifying-todo",
+          "title": "Simplifying Your To-Do List",
+          "body": [
+            "An overstuffed to-do list isn't a sign of ambition — it's a source of paralysis and guilt. Most lists are bloated with low-value tasks that survive only because no one questions them.",
+            "Cut ruthlessly. For every item, ask whether it truly deserves your finite time, or whether it can be deleted, delegated, or deferred indefinitely. A shorter list you actually complete beats a long one you drown in."
+          ],
+          "takeaways": [
+            "A bloated list creates paralysis, not progress.",
+            "Delete, delegate, or defer anything that isn't vital.",
+            "A short list you finish beats a long list you carry."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "pareto-analysis",
+          "title": "80/20 Analysis",
+          "kind": "pareto",
+          "summary": "Review your goals and tasks, then identify the vital 20% of activities that will yield the most results."
+        },
+        {
+          "id": "simplify-life",
+          "title": "Simplifying Your Life",
+          "kind": "reflection",
+          "summary": "Declutter your to-do list by eliminating or delegating low-priority tasks.",
+          "prompts": [
+            "List three recurring tasks you could eliminate entirely with little real cost.",
+            "List two tasks you could delegate or automate — and who or what could take them."
+          ]
+        },
+        {
+          "id": "goal-alignment",
+          "title": "Goal Alignment Exercise",
+          "kind": "reflection",
+          "summary": "Align your daily actions with your long-term goals.",
+          "prompts": [
+            "Name your single most important long-term goal right now.",
+            "Which of your daily actions actually serve it — and which don't?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-7",
+      "number": 7,
+      "title": "Creating Balance",
+      "theme": "Integrating Work and Life",
+      "objective": "Find balance by integrating work, personal life, and self-care without feeling overwhelmed.",
+      "topics": [
+        {
+          "id": "work-life-balance",
+          "title": "Balance as Part of Time Mastery",
+          "body": [
+            "Balance isn't a perfect 50/50 split of every day — it's the sense, over time, that the important parts of your life are each getting their due. Some seasons lean toward work, others toward family or rest, and that's healthy when it's chosen rather than drifted into.",
+            "Integration, not rigid separation, is often more realistic. The aim is a life where no single domain consistently starves the others."
+          ],
+          "takeaways": [
+            "Balance is measured over seasons, not single days.",
+            "Aim for chosen imbalance, not accidental imbalance.",
+            "Integration is often more honest than strict separation."
+          ]
+        },
+        {
+          "id": "integrating-growth",
+          "title": "Integrating Growth, Hobbies & Relationships",
+          "body": [
+            "Personal growth, hobbies, and relationships are not luxuries to fit in once work is 'done' — because work is never done. They are core parts of a full life and deserve their own protected place in your schedule.",
+            "When you give these a real block, you stop treating your own life as the thing that happens in the leftovers."
+          ],
+          "takeaways": [
+            "Don't relegate your life to the leftovers of your work.",
+            "Schedule relationships and growth like the priorities they are.",
+            "What gets a calendar block gets to actually happen."
+          ]
+        },
+        {
+          "id": "self-care",
+          "title": "The Role of Self-Care",
+          "body": [
+            "Self-care isn't indulgence — it's maintenance for the one body and mind you have to live and work in. It spans physical (sleep, movement, nourishment), emotional (connection, processing feelings), and mental (rest, learning, stillness) needs.",
+            "Neglecting self-care doesn't make you more productive; it borrows from your future and charges interest in the form of burnout."
+          ],
+          "takeaways": [
+            "Self-care is maintenance, not indulgence.",
+            "It spans physical, emotional, and mental needs.",
+            "Neglect borrows from your future and charges interest."
+          ]
+        },
+        {
+          "id": "hustle-culture",
+          "title": "Avoiding the Hustle-Culture Trap",
+          "body": [
+            "Hustle culture sells the idea that your worth equals your output and that rest must be earned through exhaustion. It's a fast road to burnout dressed up as ambition.",
+            "Time mastery offers a different story: that you can be deeply effective and well-rested, that boundaries make you more capable, not less, and that a sustainable pace beats a heroic sprint every time."
+          ],
+          "takeaways": [
+            "Your worth is not your output.",
+            "Rest is a requirement, not a reward to be earned.",
+            "A sustainable pace outperforms heroic sprints over time."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "work-life-integration",
+          "title": "Work-Life Integration Plan",
+          "kind": "work-life-integration",
+          "summary": "Create a weekly plan that integrates work and personal life across the domains that matter to you."
+        },
+        {
+          "id": "self-care-audit",
+          "title": "Self-Care Audit",
+          "kind": "reflection",
+          "summary": "Evaluate your current self-care routine and identify improvements.",
+          "prompts": [
+            "How are you currently caring for yourself physically, emotionally, and mentally?",
+            "Which of these three is most neglected, and what's one change you'll make this week?"
+          ]
+        },
+        {
+          "id": "imbalance-reflection",
+          "title": "Reflection: Where You Feel Imbalanced",
+          "kind": "reflection",
+          "summary": "Name an area of imbalance and a path back toward center.",
+          "prompts": [
+            "What's one area of your life where you feel most imbalanced right now?",
+            "What's one realistic step that would move it back toward balance?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-8",
+      "number": 8,
+      "title": "Long-Term Time Mastery",
+      "theme": "Sustainability & Maintaining Momentum",
+      "objective": "Solidify your time-mastery strategies and build a sustainable system to maintain progress over the long term.",
+      "topics": [
+        {
+          "id": "review-strategies",
+          "title": "Reviewing What You've Learned",
+          "body": [
+            "Over eight weeks you've redefined productivity, learned to block your time, set boundaries, eliminated distractions, managed your energy, focused on the vital few, and integrated work with life. Together these form a complete system — not a set of isolated tricks.",
+            "The power is in how they reinforce each other: boundaries protect your blocks, energy awareness shapes your blocks, and the 80/20 lens decides what fills them."
+          ],
+          "takeaways": [
+            "You've built a system, not a pile of tips.",
+            "The pieces reinforce one another — use them together.",
+            "Revisit the weeks that challenged you most."
+          ]
+        },
+        {
+          "id": "tracking-progress",
+          "title": "Tracking and Measuring Progress",
+          "body": [
+            "What gets measured gets maintained. A simple weekly review — what worked, what slipped, what to adjust — keeps your system alive instead of letting it quietly decay.",
+            "Choose a few honest signals to watch: hours on your vital few, energy levels, how often you held your boundaries. The point isn't perfection; it's staying aware enough to course-correct."
+          ],
+          "takeaways": [
+            "A short weekly review keeps the system alive.",
+            "Pick a few honest signals and watch them.",
+            "Course-correction beats perfection."
+          ]
+        },
+        {
+          "id": "adapting-system",
+          "title": "Adapting as Your Life Evolves",
+          "body": [
+            "Your system should serve your life, not the other way around. Seasons change — new jobs, relationships, responsibilities — and a system that can't flex will eventually be abandoned.",
+            "Expect to revisit and reshape your approach regularly. The skill isn't building one perfect system; it's the ongoing practice of noticing what no longer fits and adjusting."
+          ],
+          "takeaways": [
+            "A rigid system gets abandoned; a flexible one endures.",
+            "Plan to revise your approach as seasons change.",
+            "Mastery is an ongoing practice, not a finished product."
+          ]
+        },
+        {
+          "id": "long-term-vision",
+          "title": "A Long-Term Vision for Your Time",
+          "body": [
+            "Beyond this week and this month, what is your time ultimately for? A clear long-term vision — the life you're building, the person you're becoming — gives every daily choice a reference point.",
+            "When you know where you're headed, the small decisions about how to spend an hour get dramatically easier. Your vision becomes the quiet filter behind every yes and no."
+          ],
+          "takeaways": [
+            "A clear vision makes daily choices easier.",
+            "Know what your time is ultimately for.",
+            "Let your long-term vision filter your short-term yeses."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "mastery-roadmap",
+          "title": "Time Mastery Roadmap",
+          "kind": "mastery-roadmap",
+          "summary": "Build a roadmap for how you'll maintain and refine your time-mastery practices moving forward."
+        },
+        {
+          "id": "breakthrough-reflection",
+          "title": "Group Reflection",
+          "kind": "discussion",
+          "summary": "Share one major shift or breakthrough that happened for you during this course.",
+          "prompts": [
+            "What's the single biggest shift or breakthrough you experienced in these eight weeks?",
+            "What surprised you most about your own relationship with time?"
+          ]
+        },
+        {
+          "id": "accountability-partnership",
+          "title": "Accountability Partnership",
+          "kind": "reflection",
+          "summary": "Set up continued accountability after the course ends.",
+          "prompts": [
+            "Who could be your accountability partner moving forward?",
+            "What will you check in on together, and how often?"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 # tiaera-paulette24
 
-The professional site for **Tiaera Paulette, LMSW** — therapist, adjunct professor (UT
+The professional site for **Tiaera Paulette, LMSW** — therapist, adjunct professor (University of Tennessee
 College of Social Work), incoming PhD student (Clark Atlanta, Fall 2026), speaker,
-podcast host (*Uncensored Wellness*), and author.
+podcast host (_Uncensored Wellness_), and author.
 
 The site supports:
 
@@ -35,22 +35,22 @@ won't run the `api/*.ts` serverless functions and `/api/*` calls will 404.
 
 ## Scripts
 
-| Command | What it does |
-| --- | --- |
-| `npm run dev` | Vite dev server on `:5173` |
-| `npm run build` | `tsc -b && vite build` → `dist/` |
-| `npm run preview` | Serve the production build locally |
-| `npm run typecheck` | `tsc --noEmit` |
+| Command             | What it does                       |
+| ------------------- | ---------------------------------- |
+| `npm run dev`       | Vite dev server on `:5173`         |
+| `npm run build`     | `tsc -b && vite build` → `dist/`   |
+| `npm run preview`   | Serve the production build locally |
+| `npm run typecheck` | `tsc --noEmit`                     |
 
 ## Environment
 
 Copy `.env.example` to `.env` (or set in Vercel project settings).
 
-| Var | Where | Purpose |
-| --- | --- | --- |
-| `VITE_CAL_LINK` | client | Cal.com booking link — everything after `cal.com/`, e.g. `tiaera-paulette/speaking-inquiry` |
-| `VITE_STRIPE_PUBLISHABLE_KEY` | client | `pk_test_…` / `pk_live_…` |
-| `STRIPE_SECRET_KEY` | server | `sk_test_…` / `sk_live_…` — Vercel only |
+| Var                           | Where  | Purpose                                                                                     |
+| ----------------------------- | ------ | ------------------------------------------------------------------------------------------- |
+| `VITE_CAL_LINK`               | client | Cal.com booking link — everything after `cal.com/`, e.g. `tiaera-paulette/speaking-inquiry` |
+| `VITE_STRIPE_PUBLISHABLE_KEY` | client | `pk_test_…` / `pk_live_…`                                                                   |
+| `STRIPE_SECRET_KEY`           | server | `sk_test_…` / `sk_live_…` — Vercel only                                                     |
 
 ## Project structure
 

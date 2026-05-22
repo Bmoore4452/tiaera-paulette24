@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Check, Clock, Loader2, Sparkles } from 'lucide-react';
 import PageTransition from '../components/layout/PageTransition';
 import Reveal from '../components/Reveal';
@@ -19,6 +20,11 @@ export default function Masterclasses() {
           of access. Move at your own speed or commit to a group; either way, the work
           meets you where you are.
         </p>
+        <div className="mt-8">
+          <Link to="/course" className="btn-ghost">
+            <Sparkles size={16} /> Preview the digital course experience
+          </Link>
+        </div>
       </section>
 
       <section className="container-x py-12 md:py-16 space-y-24 md:space-y-32">
