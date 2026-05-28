@@ -9,6 +9,8 @@ The site supports:
 - Public speaking bookings via **Cal.com** (synced to her Google Calendar)
 - **Free + paid masterclass** registration (Stripe Checkout for paid)
 - **Books & apparel** sales (stubbed — placeholders until inventory and fulfillment finalize)
+- **Interactive course POC** at `/course` — a local, no-backend mockup of the digitized
+  8-week masterclass (see [Course POC](#course-poc-time-mastery))
 
 ## Stack
 
@@ -63,16 +65,50 @@ src/
   components/
     layout/{Nav,Footer,PageTransition}.tsx
     Reveal.tsx                    Scroll-reveal wrapper
+    course/                       Course POC — see "Course POC" below
+      CourseProgress.tsx            Progress context (localStorage-backed)
+      ui.tsx, fields.tsx            Shared themed UI + form primitives
+      activities/                   8 interactive activities + generic reflection
   data/
-    masterclasses.ts              Typed array — paid items reference Stripe price IDs
+    programs.ts                   Typed array — paid items reference Stripe price IDs
     products.ts                   Stubbed books/apparel
+    course.content.json           Course POC content (8 weeks, topics, activities)
+    course.ts                     Types + selectors over course.content.json
+  hooks/
+    useLocalStorage.ts            Namespaced (tp24:) persisted state
   lib/
     stripe.ts                     Client-side checkout helper
     format.ts                     Currency formatter
   pages/
     Home, About, Speaking, Masterclasses, Shop, Contact,
     CheckoutSuccess, CheckoutCancel, NotFound
+    course/                       CourseHome, WeekDetail, TopicPage, ActivityPage
 ```
+
+## Course POC (Time Mastery)
+
+A local, high-quality proof of concept that fully digitizes Tiaera's 8-week _Time
+Mastery Masterclass_ — built to demo the experience before committing to backend
+budget. **No backend yet:** all content is local and all student work persists to
+`localStorage`. The plan is to swap the persistence layer for Supabase later.
+
+- **Routes** (intentionally kept out of the main nav; entered via a "Preview the
+  digital course experience" link on the Masterclasses page):
+  `/course`, `/course/:weekId`, `/course/:weekId/topic/:topicId`,
+  `/course/:weekId/activity/:activityId`
+- **Content** lives in `src/data/course.content.json` so it can be edited without
+  touching components. `src/data/course.ts` types it and exposes selectors. The JSON
+  shape maps cleanly onto a future course/week/topic/activity DB.
+- **Progress & saved work** persist via `useLocalStorage` (keys namespaced `tp24:`)
+  and the `CourseProgress` context. Each activity owns its own saved-work key.
+- **8 bespoke interactive activities** in `src/components/course/activities/`
+  (Time Audit, Time-Blocking, Boundary-Setting, Distraction Mapping, Energy Rhythms,
+  80/20 Analysis, Work-Life Integration, Mastery Roadmap). Reflection/discussion
+  activities use the generic `Reflection` worksheet. `activities/index.tsx` maps each
+  activity `kind` to its component.
+
+> The per-topic teaching copy in `course.content.json` is placeholder content — it
+> should be reviewed/rewritten in Tiaera's own voice before anything ships.
 
 ## Pre-launch checklist
 
@@ -80,7 +116,7 @@ src/
 - [ ] Move Cal.com from the test account onto `tiaerapaulette24@gmail.com`, connect her
       Google Calendar, update `VITE_CAL_LINK`
 - [ ] Create real Stripe products for masterclasses + replace `price_REPLACE_ME_*` IDs
-      in `src/data/masterclasses.ts`
+      in `src/data/programs.ts`
 - [ ] Wire `api/register-free.ts` to a real mailer / list (Resend, Mailchimp, etc.)
 - [ ] Finalize book & apparel SKUs and decide on fulfillment (POD vs manual)
 - [ ] Set Stripe env vars and `VITE_CAL_LINK` in Vercel

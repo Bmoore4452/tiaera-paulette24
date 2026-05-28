@@ -22,8 +22,8 @@ function hourLabel(h: number) {
   return `${display}${h < 12 ? 'a' : 'p'}`;
 }
 
-export default function EnergyRhythms({ activity, weekId }: ActivityProps) {
-  const [state, setState, reset] = useWork<State>(weekId, activity.id, {
+export default function EnergyRhythms({ activity, courseId, weekId }: ActivityProps) {
+  const [state, setState, reset] = useWork<State>(courseId, weekId, activity.id, {
     chronotype: null,
     energy: {},
     peakTasks: '',

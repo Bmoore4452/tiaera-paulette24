@@ -9,8 +9,8 @@ type State = { tasks: Task[]; protect: string };
 const uid = () => Math.random().toString(36).slice(2, 9);
 const blank = (): Task => ({ id: uid(), text: '', vital: false });
 
-export default function Pareto({ activity, weekId }: ActivityProps) {
-  const [state, setState, reset] = useWork<State>(weekId, activity.id, {
+export default function Pareto({ activity, courseId, weekId }: ActivityProps) {
+  const [state, setState, reset] = useWork<State>(courseId, weekId, activity.id, {
     tasks: [blank(), blank(), blank()],
     protect: '',
   });

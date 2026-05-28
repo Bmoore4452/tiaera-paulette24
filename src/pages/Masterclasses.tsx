@@ -21,8 +21,8 @@ export default function Masterclasses() {
           meets you where you are.
         </p>
         <div className="mt-8">
-          <Link to="/course" className="btn-ghost">
-            <Sparkles size={16} /> Preview the digital course experience
+          <Link to="/courses" className="btn-ghost">
+            <Sparkles size={16} /> Preview both digital masterclasses
           </Link>
         </div>
       </section>

@@ -1,17 +1,49 @@
 import { useParams } from 'react-router-dom';
-import { Sparkles } from 'lucide-react';
+import { Lock, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import PageTransition from '../../components/layout/PageTransition';
 import { Crumbs, CompleteToggle, StepNav, AutosaveNote } from '../../components/course/ui';
 import { activityComponent } from '../../components/course/activities';
+import { useCourseProgress } from '../../components/course/CourseProgress';
 import CourseMissing from './CourseMissing';
-import { getActivity, getWeek, isInteractive } from '../../data/course';
+import { getActivity, getCourse, getWeek, isInteractive } from '../../data/course';
 
 export default function ActivityPage() {
-  const { weekId, activityId } = useParams();
-  const week = getWeek(weekId);
+  const { courseId, weekId, activityId } = useParams();
+  const course = getCourse(courseId);
+  const week = getWeek(course, weekId);
   const activity = getActivity(week, activityId);
+  const { isWeekUnlocked } = useCourseProgress();
 
-  if (!week || !activity) return <CourseMissing />;
+  if (!course || !week || !activity) return <CourseMissing />;
+  const unlocked = isWeekUnlocked(course, week);
+
+  if (!unlocked) {
+    return (
+      <PageTransition>
+        <div className="container-x max-w-3xl pt-32 pb-20 md:pt-40">
+          <Crumbs
+            items={[
+              { label: 'Courses', to: '/courses' },
+              { label: course.title, to: `/courses/${course.id}` },
+              { label: `Week ${week.number}`, to: `/courses/${course.id}/${week.id}` },
+              { label: 'Locked' },
+            ]}
+          />
+          <div className="mt-10 rounded-3xl border border-bone/15 bg-ink-soft/40 p-8 text-center">
+            <Lock size={28} className="mx-auto text-flame" />
+            <h1 className="mt-5 text-balance text-3xl md:text-4xl">Finish the Core Teaching first</h1>
+            <p className="mt-4 text-bone">
+              Each week's activities open after you've worked through every teaching point in order.
+            </p>
+            <Link to={`/courses/${course.id}/${week.id}`} className="btn-primary mt-8">
+              Back to week overview
+            </Link>
+          </div>
+        </div>
+      </PageTransition>
+    );
+  }
 
   const Body = activityComponent(activity.kind);
   const interactive = isInteractive(activity.kind);
@@ -21,8 +53,9 @@ export default function ActivityPage() {
       <div className="container-x max-w-3xl pt-32 pb-20 md:pt-40">
         <Crumbs
           items={[
-            { label: 'Course', to: '/course' },
-            { label: `Week ${week.number}`, to: `/course/${week.id}` },
+            { label: 'Courses', to: '/courses' },
+            { label: course.title, to: `/courses/${course.id}` },
+            { label: `Week ${week.number}`, to: `/courses/${course.id}/${week.id}` },
             { label: 'Activity' },
           ]}
         />
@@ -45,14 +78,14 @@ export default function ActivityPage() {
         <AutosaveNote />
 
         <div className="mt-10">
-          <Body activity={activity} weekId={week.id} />
+          <Body activity={activity} courseId={course.id} weekId={week.id} />
         </div>
 
         <div className="mt-10">
-          <CompleteToggle weekId={week.id} kind="activity" id={activity.id} />
+          <CompleteToggle courseId={course.id} weekId={week.id} kind="activity" id={activity.id} />
         </div>
 
-        <StepNav week={week} currentId={activity.id} />
+        <StepNav course={course} week={week} currentId={activity.id} />
       </div>
     </PageTransition>
   );

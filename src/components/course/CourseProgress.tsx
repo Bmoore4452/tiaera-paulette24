@@ -1,19 +1,31 @@
 import { createContext, useCallback, useContext, useMemo, type ReactNode } from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
-import { course, itemKey, totalItems, type Week } from '../../data/course';
+import {
+  courses,
+  courseTotalItems,
+  itemKey,
+  weekSteps,
+  type Course,
+  type ProgressKind,
+  type Week,
+} from '../../data/course';
 
 type ProgressState = {
-  /** Set of completed item keys, e.g. "week-1:topic:what-is-time-mastery". */
+  /** Set of completed item keys, e.g. "time-mastery:week-1:topic:what-is-time-mastery". */
   completed: string[];
 };
 
 type ProgressContextValue = {
-  isComplete: (weekId: string, kind: 'topic' | 'activity', id: string) => boolean;
-  toggle: (weekId: string, kind: 'topic' | 'activity', id: string) => void;
-  setComplete: (weekId: string, kind: 'topic' | 'activity', id: string, done: boolean) => void;
-  completedCount: number;
-  totalCount: number;
-  weekProgress: (week: Week) => { done: number; total: number };
+  isComplete: (courseId: string, weekId: string, kind: ProgressKind, id: string) => boolean;
+  toggle: (courseId: string, weekId: string, kind: ProgressKind, id: string) => void;
+  setComplete: (courseId: string, weekId: string, kind: ProgressKind, id: string, done: boolean) => void;
+  weekProgress: (course: Course, week: Week) => { done: number; total: number };
+  courseProgress: (course: Course) => { done: number; total: number };
+  /** True when every Core Teaching point in the week is complete (or when the course doesn't require gating). */
+  isWeekUnlocked: (course: Course, week: Week) => boolean;
+  /** True for the first teaching point and for any later point whose predecessors are all complete. */
+  isTeachingPointUnlocked: (course: Course, week: Week, pointId: string) => boolean;
+  resetCourse: (courseId: string) => void;
   resetAll: () => void;
 };
 
@@ -26,15 +38,14 @@ export function CourseProgressProvider({ children }: { children: ReactNode }) {
 
   const completedSet = useMemo(() => new Set(state.completed), [state.completed]);
 
-  const isComplete = useCallback(
-    (weekId: string, kind: 'topic' | 'activity', id: string) =>
-      completedSet.has(itemKey(weekId, kind, id)),
+  const isComplete = useCallback<ProgressContextValue['isComplete']>(
+    (courseId, weekId, kind, id) => completedSet.has(itemKey(courseId, weekId, kind, id)),
     [completedSet],
   );
 
-  const setComplete = useCallback(
-    (weekId: string, kind: 'topic' | 'activity', id: string, done: boolean) => {
-      const key = itemKey(weekId, kind, id);
+  const setComplete = useCallback<ProgressContextValue['setComplete']>(
+    (courseId, weekId, kind, id, done) => {
+      const key = itemKey(courseId, weekId, kind, id);
       setState((prev) => {
         const has = prev.completed.includes(key);
         if (done && !has) return { completed: [...prev.completed, key] };
@@ -45,31 +56,73 @@ export function CourseProgressProvider({ children }: { children: ReactNode }) {
     [setState],
   );
 
-  const toggle = useCallback(
-    (weekId: string, kind: 'topic' | 'activity', id: string) => {
-      setComplete(weekId, kind, id, !isComplete(weekId, kind, id));
-    },
+  const toggle = useCallback<ProgressContextValue['toggle']>(
+    (courseId, weekId, kind, id) => setComplete(courseId, weekId, kind, id, !isComplete(courseId, weekId, kind, id)),
     [isComplete, setComplete],
   );
 
-  const weekProgress = useCallback(
-    (week: Week) => {
-      const items = [
-        ...week.topics.map((t) => itemKey(week.id, 'topic', t.id)),
-        ...week.activities.map((a) => itemKey(week.id, 'activity', a.id)),
-      ];
-      return { done: items.filter((k) => completedSet.has(k)).length, total: items.length };
+  const weekProgress = useCallback<ProgressContextValue['weekProgress']>(
+    (course, week) => {
+      const keys = weekSteps(course.id, week).map((s) => itemKey(course.id, s.weekId, s.kind, s.id));
+      return { done: keys.filter((k) => completedSet.has(k)).length, total: keys.length };
     },
     [completedSet],
+  );
+
+  const courseProgress = useCallback<ProgressContextValue['courseProgress']>(
+    (course) => {
+      const total = courseTotalItems(course);
+      let done = 0;
+      for (const w of course.weeks) {
+        for (const s of weekSteps(course.id, w)) {
+          if (completedSet.has(itemKey(course.id, s.weekId, s.kind, s.id))) done++;
+        }
+      }
+      return { done, total };
+    },
+    [completedSet],
+  );
+
+  const isWeekUnlocked = useCallback<ProgressContextValue['isWeekUnlocked']>(
+    (course, week) => {
+      if (!course.gatedByTeaching) return true;
+      const points = week.teachingPoints ?? [];
+      if (points.length === 0) return true;
+      return points.every((p) => completedSet.has(itemKey(course.id, week.id, 'teaching', p.id)));
+    },
+    [completedSet],
+  );
+
+  const isTeachingPointUnlocked = useCallback<ProgressContextValue['isTeachingPointUnlocked']>(
+    (course, week, pointId) => {
+      const points = week.teachingPoints ?? [];
+      const idx = points.findIndex((p) => p.id === pointId);
+      if (idx <= 0) return true; // first (or unknown) point is always open
+      return points
+        .slice(0, idx)
+        .every((p) => completedSet.has(itemKey(course.id, week.id, 'teaching', p.id)));
+    },
+    [completedSet],
+  );
+
+  const resetCourse = useCallback<ProgressContextValue['resetCourse']>(
+    (courseId) => {
+      setState((prev) => ({
+        completed: prev.completed.filter((k) => !k.startsWith(`${courseId}:`)),
+      }));
+    },
+    [setState],
   );
 
   const value: ProgressContextValue = {
     isComplete,
     toggle,
     setComplete,
-    completedCount: state.completed.length,
-    totalCount: totalItems,
     weekProgress,
+    courseProgress,
+    isWeekUnlocked,
+    isTeachingPointUnlocked,
+    resetCourse,
     resetAll: reset,
   };
 
@@ -82,5 +135,5 @@ export function useCourseProgress() {
   return ctx;
 }
 
-/** Convenience: total weeks, for headers etc. */
-export const totalWeeks = course.weeks.length;
+/** Re-export for callers needing the raw list. */
+export { courses };

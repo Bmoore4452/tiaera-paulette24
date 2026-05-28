@@ -21,8 +21,8 @@ const COLUMNS: { key: ListKey; title: string; hint: string; accent: string }[] =
   { key: 'stop', title: 'Stop', hint: 'What no longer serves you.', accent: '#9ca3af' },
 ];
 
-export default function MasteryRoadmap({ activity, weekId }: ActivityProps) {
-  const [state, setState, reset] = useWork<State>(weekId, activity.id, {
+export default function MasteryRoadmap({ activity, courseId, weekId }: ActivityProps) {
+  const [state, setState, reset] = useWork<State>(courseId, weekId, activity.id, {
     keep: [''],
     start: [''],
     stop: [''],

@@ -39,8 +39,8 @@ const blank = (): Row => ({
   notes: '',
 });
 
-export default function DistractionMapping({ activity, weekId }: ActivityProps) {
-  const [state, setState, reset] = useWork<State>(weekId, activity.id, { rows: [blank()] });
+export default function DistractionMapping({ activity, courseId, weekId }: ActivityProps) {
+  const [state, setState, reset] = useWork<State>(courseId, weekId, activity.id, { rows: [blank()] });
 
   const update = (id: string, patch: Partial<Row>) =>
     setState((p) => ({ rows: p.rows.map((r) => (r.id === id ? { ...r, ...patch } : r)) }));

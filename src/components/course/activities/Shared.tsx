@@ -3,8 +3,8 @@ import { useLocalStorage } from '../../../hooks/useLocalStorage';
 import { workKey } from './types';
 
 /** Per-activity persisted work, keyed and namespaced consistently. */
-export function useWork<T>(weekId: string, activityId: string, initial: T) {
-  return useLocalStorage<T>(workKey(weekId, activityId), initial);
+export function useWork<T>(courseId: string, weekId: string, activityId: string, initial: T) {
+  return useLocalStorage<T>(workKey(courseId, weekId, activityId), initial);
 }
 
 export function ClearWork({ onClear }: { onClear: () => void }) {

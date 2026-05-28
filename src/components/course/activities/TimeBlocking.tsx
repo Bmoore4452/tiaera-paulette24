@@ -26,8 +26,8 @@ function hourLabel(h: number) {
   return `${display} ${am ? 'AM' : 'PM'}`;
 }
 
-export default function TimeBlocking({ activity, weekId }: ActivityProps) {
-  const [state, setState, reset] = useWork<State>(weekId, activity.id, { blocks: {} });
+export default function TimeBlocking({ activity, courseId, weekId }: ActivityProps) {
+  const [state, setState, reset] = useWork<State>(courseId, weekId, activity.id, { blocks: {} });
   const [day, setDay] = useState(0);
   const [brush, setBrush] = useState(CATEGORIES[0].id);
 

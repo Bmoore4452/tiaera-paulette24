@@ -26,8 +26,8 @@ const CATEGORIES = [
 
 type State = { cells: Record<string, string>; patterns: string; leaks: string };
 
-export default function TimeAudit({ activity, weekId }: ActivityProps) {
-  const [state, setState, reset] = useWork<State>(weekId, activity.id, {
+export default function TimeAudit({ activity, courseId, weekId }: ActivityProps) {
+  const [state, setState, reset] = useWork<State>(courseId, weekId, activity.id, {
     cells: {},
     patterns: '',
     leaks: '',

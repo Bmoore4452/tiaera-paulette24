@@ -3,22 +3,24 @@ import { Lightbulb } from 'lucide-react';
 import PageTransition from '../../components/layout/PageTransition';
 import { Crumbs, CompleteToggle, StepNav } from '../../components/course/ui';
 import CourseMissing from './CourseMissing';
-import { getTopic, getWeek } from '../../data/course';
+import { getCourse, getTopic, getWeek } from '../../data/course';
 
 export default function TopicPage() {
-  const { weekId, topicId } = useParams();
-  const week = getWeek(weekId);
+  const { courseId, weekId, topicId } = useParams();
+  const course = getCourse(courseId);
+  const week = getWeek(course, weekId);
   const topic = getTopic(week, topicId);
 
-  if (!week || !topic) return <CourseMissing />;
+  if (!course || !week || !topic) return <CourseMissing />;
 
   return (
     <PageTransition>
       <article className="container-x max-w-3xl pt-32 pb-20 md:pt-40">
         <Crumbs
           items={[
-            { label: 'Course', to: '/course' },
-            { label: `Week ${week.number}`, to: `/course/${week.id}` },
+            { label: 'Courses', to: '/courses' },
+            { label: course.title, to: `/courses/${course.id}` },
+            { label: `Week ${week.number}`, to: `/courses/${course.id}/${week.id}` },
             { label: 'Topic' },
           ]}
         />
@@ -51,10 +53,10 @@ export default function TopicPage() {
         )}
 
         <div className="mt-10">
-          <CompleteToggle weekId={week.id} kind="topic" id={topic.id} />
+          <CompleteToggle courseId={course.id} weekId={week.id} kind="topic" id={topic.id} />
         </div>
 
-        <StepNav week={week} currentId={topic.id} />
+        <StepNav course={course} week={week} currentId={topic.id} />
       </article>
     </PageTransition>
   );

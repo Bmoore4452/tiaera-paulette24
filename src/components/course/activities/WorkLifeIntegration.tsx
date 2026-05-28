@@ -17,9 +17,9 @@ type State = Record<string, Entry>;
 
 const emptyEntry = (): Entry => ({ intention: '', anchor: '', rating: '3' });
 
-export default function WorkLifeIntegration({ activity, weekId }: ActivityProps) {
+export default function WorkLifeIntegration({ activity, courseId, weekId }: ActivityProps) {
   const init: State = Object.fromEntries(DOMAINS.map((d) => [d.id, emptyEntry()]));
-  const [state, setState, reset] = useWork<State>(weekId, activity.id, init);
+  const [state, setState, reset] = useWork<State>(courseId, weekId, activity.id, init);
 
   const entry = (id: string): Entry => state[id] ?? emptyEntry();
   const update = (id: string, patch: Partial<Entry>) =>

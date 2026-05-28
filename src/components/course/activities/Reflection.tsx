@@ -4,9 +4,9 @@ import { useWork, ClearWork } from './Shared';
 import { Labeled, TextArea } from '../fields';
 
 /** Generic worksheet for reflection & discussion activities — one field per prompt. */
-export default function Reflection({ activity, weekId }: ActivityProps) {
+export default function Reflection({ activity, courseId, weekId }: ActivityProps) {
   const prompts = activity.prompts ?? [activity.summary];
-  const [answers, setAnswers, reset] = useWork<Record<number, string>>(weekId, activity.id, {});
+  const [answers, setAnswers, reset] = useWork<Record<number, string>>(courseId, weekId, activity.id, {});
 
   return (
     <div className="space-y-6">

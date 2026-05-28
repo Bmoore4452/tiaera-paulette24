@@ -10,8 +10,8 @@ type State = { rows: Row[] };
 const uid = () => Math.random().toString(36).slice(2, 9);
 const blank = (area = ''): Row => ({ id: uid(), area, current: '', boundary: '', script: '' });
 
-export default function BoundarySetting({ activity, weekId }: ActivityProps) {
-  const [state, setState, reset] = useWork<State>(weekId, activity.id, { rows: [blank()] });
+export default function BoundarySetting({ activity, courseId, weekId }: ActivityProps) {
+  const [state, setState, reset] = useWork<State>(courseId, weekId, activity.id, { rows: [blank()] });
 
   const update = (id: string, patch: Partial<Row>) =>
     setState((p) => ({ rows: p.rows.map((r) => (r.id === id ? { ...r, ...patch } : r)) }));

@@ -1,0 +1,856 @@
+{
+  "id": "master-me",
+  "title": "Master Me",
+  "subtitle": "Six weeks to become who you already are.",
+  "overview": "A 6-week transformational masterclass to help you unpack identity, confront limiting beliefs and behaviors, build intentional habits, develop expectancy for your future, and take bold action toward the life you desire. Each week builds on the last — moving you from self-awareness to personal breakthrough to purposeful action.",
+  "outcomes": [
+    "See yourself clearly outside of the labels you've been carrying.",
+    "Recognize what controls your time, energy, and emotional life — and reclaim it.",
+    "Identify and replace the self-sabotage patterns blocking your growth.",
+    "Build consistency, expectancy, and the courage to leap into the next version of you."
+  ],
+  "gatedByTeaching": true,
+  "weeks": [
+    {
+      "id": "week-1",
+      "number": 1,
+      "title": "Who Are You Outside of Your Labels?",
+      "theme": "How Labels Strengthen Us & Cuff Us",
+      "objective": "Explore identity beyond titles, trauma, roles, achievements, expectations, and survival mechanisms.",
+      "teachingPoints": [
+        {
+          "id": "identity-vs-labels",
+          "title": "Identity vs. Labels",
+          "body": [
+            "Identity is who you are. A label is what you've been called. The two get tangled because labels arrive early — from parents, schools, friends, even strangers — and stick before you have the words to push back.",
+            "Mastering yourself starts with separating the two. Your labels describe a slice of your experience, not the whole of you. You are not your title, your role, your trauma, or your achievements. You are the one underneath, looking out at all of them."
+          ],
+          "takeaways": [
+            "Labels are descriptions. Identity is essence.",
+            "You picked up most of your labels before you could vote on them.",
+            "The work isn't erasing labels — it's noticing which ones you're confusing for yourself."
+          ]
+        },
+        {
+          "id": "happened-not-who",
+          "title": "What Happened to You ≠ Who You Are",
+          "body": [
+            "What happened to you shaped you — but it does not define you. There's a difference between carrying a story and being a story. One you can put down.",
+            "Trauma can blur this line for a long time. It tells you that you are the wound, the failure, the betrayal, the loss. But you are the one who lived through it. The witness, not the wound. Recovery starts the moment you can say 'that happened to me' instead of 'that is me.'"
+          ],
+          "takeaways": [
+            "Your story explains some of you; it doesn't equal you.",
+            "You can honor what happened without letting it define what's next.",
+            "The witness in you is what survived. That's identity."
+          ]
+        },
+        {
+          "id": "empower-or-imprison",
+          "title": "How Labels Empower or Imprison",
+          "body": [
+            "Some labels lift you up: 'I am a writer,' 'I am her mother,' 'I am a person of faith.' These are bones you can build a life on. Others quietly bend you smaller: 'the strong one,' 'the responsible one,' 'the failure,' 'too much,' 'not enough.'",
+            "Same kind of word — wildly different weight. The same label can even do both, depending on the year. The question isn't whether you have labels; it's which ones are still serving who you're becoming."
+          ],
+          "takeaways": [
+            "Strengthening labels build. Confining labels box.",
+            "One label can shift roles over a lifetime.",
+            "Ask of each: does this still serve who I'm becoming?"
+          ]
+        },
+        {
+          "id": "sources-of-labels",
+          "title": "Where Labels Come From",
+          "body": [
+            "Labels arrive from four directions. Family hands you the earliest ones — the role you played in the household. Society stamps you with assumptions based on how you look, sound, or come up. Culture wraps you in expectations you may never have agreed to. And yourself — quietly, sometimes harshly — adds the labels you start believing on your own.",
+            "Each source carries different weight and asks for different work. Family labels need clarity. Society labels need defiance. Culture labels need discernment. Self-imposed labels need compassion. Naming the source is half the freedom."
+          ],
+          "takeaways": [
+            "Family / society / culture / self — four different label factories.",
+            "Each asks for different tools.",
+            "Naming the source is half the freedom."
+          ]
+        },
+        {
+          "id": "survival-self",
+          "title": "Survival Self vs. True Self",
+          "body": [
+            "When life gets hard, you adapt. You become whoever you needed to be to keep things together: the peacemaker, the fixer, the one who never needs help, the one who keeps it light. These aren't fake — they're brilliant. They got you through.",
+            "But survival was never supposed to be a personality. When the storm passes, you don't always remember to put the armor down. The true self underneath is often quieter, softer, slower, more honest. Meeting her again is part of this work."
+          ],
+          "takeaways": [
+            "Survival selves are real and were earned.",
+            "They were costumes, not bodies.",
+            "The true self is usually the one you stopped giving airtime to."
+          ]
+        },
+        {
+          "id": "authenticity-over-performance",
+          "title": "Authenticity Over Performance",
+          "body": [
+            "A performed life looks like success from a distance and feels like exhaustion up close. You can hit every external mark and still feel like a stranger inside your own life. That's the cost of building from what other people clap for instead of what's actually yours.",
+            "Rebuilding from authenticity means choosing again — your work, your relationships, your faith, your time — on the criterion of 'is this mine?' rather than 'does this look right?' Slower at first. Lighter forever."
+          ],
+          "takeaways": [
+            "Performance is loud. Authenticity is quiet.",
+            "The test is 'is this mine?' not 'does this look right?'",
+            "Slower up front, lighter forever."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "identity-inventory",
+          "title": "Identity Inventory",
+          "kind": "identity-inventory",
+          "summary": "Take stock of the labels you carry. Sort which ones strengthen you and which ones confine you."
+        },
+        {
+          "id": "labels-discussion",
+          "title": "Group Discussion · Labels We Carry",
+          "kind": "reflection",
+          "summary": "A small-group discussion on the labels participants carry. Capture your own reflections here first.",
+          "prompts": [
+            "What labels do you find yourself defending — and from whom?",
+            "Which labels did you choose, and which were given to you?"
+          ]
+        },
+        {
+          "id": "mirror-affirmation",
+          "title": "Mirror Affirmation Exercise",
+          "kind": "reflection",
+          "summary": "Stand in front of a mirror and speak three affirmations about who you are — not what you do. Capture them here.",
+          "prompts": [
+            "Write three affirmations about who you are at your core (start each with 'I am…').",
+            "Which one was hardest to say out loud, and why?"
+          ]
+        },
+        {
+          "id": "meeting-authentic-self",
+          "title": "Visualization · Meeting Your Authentic Self",
+          "kind": "reflection",
+          "summary": "Close your eyes and imagine meeting the version of you free of every label. What do they look like, feel like, move like?",
+          "prompts": [
+            "Describe the authentic version of you you just met.",
+            "What's one thing they would tell the version of you reading this?"
+          ]
+        }
+      ],
+      "discussion": [
+        { "id": "no-one-needs", "question": "Who are you when no one needs anything from you?" },
+        { "id": "labels-shaped", "question": "What labels have shaped your life?" },
+        { "id": "labels-motivate", "question": "Which labels motivate you?" },
+        { "id": "labels-limit", "question": "Which labels limit you?" },
+        { "id": "identity-outgrown", "question": "What identity have you outgrown?" }
+      ],
+      "journal": {
+        "id": "journal-1",
+        "title": "Journal · Week One",
+        "intro": "Identity: condition or character as to who or what a thing is; qualities, beliefs, etc. that distinguishes or identifies a person or thing.",
+        "prompts": [
+          { "id": "list-labels", "question": "List some of your labels." },
+          { "id": "labels-wanted", "question": "Are there any labels you don't possess but would like to?" },
+          { "id": "labels-to-remove", "question": "If empower means to strengthen and cuff can be thought of as limiting or to hold one back, which of your labels should you remove despite it potentially being uncomfortable to do so?" },
+          { "id": "letter-to-self", "question": "Write a letter to yourself introducing who you desire to become." }
+        ]
+      }
+    },
+    {
+      "id": "week-2",
+      "number": 2,
+      "title": "What Compels Us, Controls Us",
+      "theme": "Where Your Treasure Lies, There Will Your Heart Lie",
+      "objective": "Examine your emotional attachments, priorities, habits, and what truly drives your behavior.",
+      "teachingPoints": [
+        {
+          "id": "priorities-reveal",
+          "title": "What You Prioritize Reveals What Controls You",
+          "body": [
+            "You can't fake a priority. Whatever consistently gets your first hour, your last thought, your best energy — that's what actually has your heart, no matter what you tell yourself.",
+            "This week begins with a quiet mirror: looking at where your time, attention, money, and emotional bandwidth go, and being honest about the gap between what you say matters and what the calendar shows. The calendar usually tells the truth."
+          ],
+          "takeaways": [
+            "The calendar reveals the heart.",
+            "The mismatch between what you say and what you do is data, not failure.",
+            "Naming what controls you is the first step in redirecting it."
+          ]
+        },
+        {
+          "id": "dependency-vs-discipline",
+          "title": "Emotional Dependency vs. Emotional Discipline",
+          "body": [
+            "Emotional dependency means letting your feelings drive — reacting to whatever's loudest, responding to whoever's nearest, soothing whatever's most uncomfortable in the moment. Emotional discipline means feeling the feeling and still choosing the next step.",
+            "Neither is about suppressing emotion. Discipline is the muscle that lets your values steer instead of your weather. It's not coldness; it's leadership of yourself."
+          ],
+          "takeaways": [
+            "Discipline isn't suppression — it's leadership.",
+            "Feelings are passengers. Values get the wheel.",
+            "This is a muscle. It strengthens with reps."
+          ]
+        },
+        {
+          "id": "attachments",
+          "title": "What You're Attached To",
+          "body": [
+            "Most of the things that control us hide as 'needs.' We tell ourselves we need the validation, the comfort, the closeness, the certainty, the money, the title, the relief from this particular pain. That story protects the attachment.",
+            "Look honestly at what you organize your life around. What would you genuinely struggle to let go of, even briefly? That's where the work lives. Not necessarily to remove the attachment — but to know it's there, and to choose whether it keeps its current grip."
+          ],
+          "takeaways": [
+            "Attachments often disguise themselves as needs.",
+            "What you'd struggle to release is what's gripping you.",
+            "Awareness changes the grip more than willpower does."
+          ]
+        },
+        {
+          "id": "unhealed-wounds",
+          "title": "How Unhealed Wounds Influence Decisions",
+          "body": [
+            "Unhealed wounds don't sit still. They make decisions for you in the background — who you trust, who you keep at arm's length, what you say yes to out of guilt, what you say no to out of fear of being hurt again.",
+            "The decisions look rational on the surface, but they're being underwritten by an old injury. Healing isn't about erasing what happened; it's about taking the wound out of the driver's seat so today's choices can be made by today's you."
+          ],
+          "takeaways": [
+            "Unhealed wounds vote in every decision.",
+            "The choice looks rational; the wound is underneath.",
+            "Healing is about who's driving, not about forgetting."
+          ]
+        },
+        {
+          "id": "emotional-drivers",
+          "title": "Identifying Unhealthy Emotional Drivers",
+          "body": [
+            "Some of what drives you is clean — love, purpose, calling, joy. Some of it is not — fear, scarcity, proving, shame. Both kinds get results. Only one kind sustains.",
+            "When you can name what's actually pushing you in a given moment — 'I'm doing this because I'm afraid,' 'I'm doing this because I need to prove I matter' — you can choose whether to keep going from that fuel or refill the tank."
+          ],
+          "takeaways": [
+            "Fear and shame produce real output and real burnout.",
+            "You can name the fuel without judging it.",
+            "Different fuel, different ceiling."
+          ]
+        },
+        {
+          "id": "intentional-energy",
+          "title": "Becoming Intentional with Your Energy",
+          "body": [
+            "Intentional doesn't mean rigid. It means awake. It means putting your finite energy where you've decided it belongs, not where the loudest demand is.",
+            "Where you spend your energy in the next month is a vote for the life you're building in the next year. This is the beginning of saying 'no' with grace and 'yes' with conviction."
+          ],
+          "takeaways": [
+            "Energy is finite. Treat it that way.",
+            "Today's energy votes for next year's life.",
+            "'No' isn't rejection. It's redirection."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "time-energy-audit",
+          "title": "Time & Energy Audit",
+          "kind": "time-energy-audit",
+          "summary": "Map where your hours go and what each of them gives you back. Find the gap between what you spend time on and what fuels you."
+        },
+        {
+          "id": "trigger-mapping",
+          "title": "Emotional Trigger Mapping",
+          "kind": "reflection",
+          "summary": "Map your most common emotional triggers — what fires them, and what they cost you.",
+          "prompts": [
+            "List three emotional triggers that pull you off-center most often.",
+            "What's the first sign in your body that a trigger has fired?",
+            "What's one specific thing you can do in the next 60 seconds when you notice it?"
+          ]
+        },
+        {
+          "id": "unhealthy-attachments",
+          "title": "Guided Reflection · Unhealthy Attachments",
+          "kind": "reflection",
+          "summary": "Get honest about the attachments that have outlived their usefulness.",
+          "prompts": [
+            "What are you most afraid to let go of, even though you know you should?",
+            "Whose approval are you still working for?"
+          ]
+        },
+        {
+          "id": "values-clarification",
+          "title": "Values Clarification Exercise",
+          "kind": "reflection",
+          "summary": "Get clear on the values you actually want directing your life — not the ones you inherited.",
+          "prompts": [
+            "Name your top five values, in order. (Examples: faith, family, honesty, growth, freedom.)",
+            "Which one have you been compromising most often, and where?"
+          ]
+        }
+      ],
+      "discussion": [
+        { "id": "consumes-thoughts", "question": "What consumes most of your thoughts?" },
+        { "id": "run-to-stressed", "question": "What do you run to when stressed?" },
+        { "id": "emotionally-attached", "question": "What are you emotionally attached to?" },
+        { "id": "more-control", "question": "What has more control over you than it should?" }
+      ],
+      "journal": {
+        "id": "journal-2",
+        "title": "Journal · Week Two",
+        "intro": "Compels means to drive forcibly. Treasure is defined as a quantity of valuable objects.",
+        "prompts": [
+          { "id": "what-compels", "question": "What dream or goal is pushing you to wake up out of the bed? Pushing you to have an ounce of belief that it's possible?" },
+          { "id": "things-of-value", "question": "What are some things of value in your life?" },
+          { "id": "overinvested", "question": "Are there any things that you are putting too much time, energy, money or effort into which don't deserve it?" }
+        ]
+      }
+    },
+    {
+      "id": "week-3",
+      "number": 3,
+      "title": "The Art of Self-Sabotage",
+      "theme": "Define It & Personalize It",
+      "objective": "Recognize the destructive patterns you participate in — and understand how fear, shame, insecurity, and comfort zones interfere with your growth.",
+      "teachingPoints": [
+        {
+          "id": "what-sabotage-looks-like",
+          "title": "What Self-Sabotage Looks Like",
+          "body": [
+            "Self-sabotage rarely announces itself. It dresses up as caution, perfectionism, 'I'll start Monday,' 'this isn't the right time,' 'I'm just tired.' It looks reasonable from the inside.",
+            "The signature move is this: the thing you most want, you're somehow the most blocked from. You stall, you over-plan, you ghost the opportunity. You're not lazy. You're scared, and the scared part of you has gotten very creative."
+          ],
+          "takeaways": [
+            "Sabotage usually looks like reasonable caution.",
+            "It targets the thing you most want.",
+            "You're not lazy. You're protecting something."
+          ]
+        },
+        {
+          "id": "common-forms",
+          "title": "The Common Forms",
+          "body": [
+            "The favorites: procrastination (delay until pressure forces a decision); perfectionism (refuse to ship anything imperfect, so nothing ships); avoidance (don't open the email, the test result, the conversation); emotional shutdown (numb out before you have to feel it); inconsistency (great for two weeks, gone by the third).",
+            "Naming yours doesn't fix them, but it does break the spell. Patterns lose power the moment you can see them at work."
+          ],
+          "takeaways": [
+            "Five common patterns. Most people have two or three.",
+            "Naming yours doesn't fix them — it breaks the spell.",
+            "Patterns repeat until they're seen."
+          ]
+        },
+        {
+          "id": "fear-success",
+          "title": "Fear of Failure vs. Fear of Success",
+          "body": [
+            "Fear of failure is the obvious one. It's loud and uncomfortable and easy to spot. Fear of success is sneakier. Success means visibility, more responsibility, harder questions, and grief for the life you'd have to leave behind.",
+            "A lot of people sabotage right at the edge of getting what they prayed for — not because they don't want it, but because they aren't sure they can handle being the person who has it. That's worth knowing about yourself."
+          ],
+          "takeaways": [
+            "Failure-fear is loud. Success-fear hides.",
+            "Success requires shedding an old self.",
+            "Sabotage near the finish line is data, not weakness."
+          ]
+        },
+        {
+          "id": "sabotage-prayers",
+          "title": "Sabotaging What You Prayed For",
+          "body": [
+            "When the thing arrives, the version of you who prayed for it doesn't always exist anymore. You've gotten used to the wanting. You've built a self around the lack. Now you're being asked to become someone new — and the old self panics.",
+            "The answer isn't to refuse the gift; it's to grow into it. To grieve the old self gently and let the new one have the keys."
+          ],
+          "takeaways": [
+            "The lack can become an identity.",
+            "Receiving requires becoming.",
+            "Grief is part of growth."
+          ]
+        },
+        {
+          "id": "familiar-dysfunction",
+          "title": "The Comfort of Familiar Dysfunction",
+          "body": [
+            "Familiar pain is still pain — but it's known pain. There's a strange comfort in dysfunction you understand. The unhealthy relationship, the chaotic schedule, the job that drains you — they're miserable, but they're predictable.",
+            "Healthy can feel weirdly uncomfortable at first. Quiet feels eerie. Peace feels like something must be wrong. That discomfort isn't a sign you should go back. It's the sound of your nervous system updating."
+          ],
+          "takeaways": [
+            "Misery you understand can feel safer than peace you don't.",
+            "Healthy is uncomfortable before it's normal.",
+            "The discomfort is recalibration, not warning."
+          ]
+        },
+        {
+          "id": "negative-self-talk",
+          "title": "Negative Self-Talk Reinforces the Cycle",
+          "body": [
+            "Every time you sabotage and then mentally beat yourself up — 'I always do this,' 'I'm so lazy,' 'I'll never change' — you reinforce the cycle. The story stays. The pattern continues. The shame fuels the next round.",
+            "Self-compassion isn't an excuse; it's a circuit breaker. Speak to yourself the way you'd speak to a friend trying hard to change. That voice, repeated, becomes the new track."
+          ],
+          "takeaways": [
+            "Shame fuels the next round of sabotage.",
+            "Compassion is the circuit breaker.",
+            "The voice you use, repeated, becomes the new normal."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "sabotage-assessment",
+          "title": "Self-Sabotage Behavior Assessment",
+          "kind": "sabotage-assessment",
+          "summary": "Inventory the patterns of self-sabotage that show up most often for you, and design the replacements."
+        },
+        {
+          "id": "cbt-thought-challenge",
+          "title": "Thought-Challenging CBT Exercise",
+          "kind": "reflection",
+          "summary": "Take a recurring sabotaging thought and put it on trial.",
+          "prompts": [
+            "Write down a thought that consistently holds you back (the exact words you say to yourself).",
+            "What evidence do you have that it's true? What evidence do you have that it's not?",
+            "Rewrite the thought in a way that's both honest and forward-moving."
+          ]
+        },
+        {
+          "id": "limiting-beliefs",
+          "title": "Identifying Limiting Beliefs",
+          "kind": "reflection",
+          "summary": "Name the beliefs underneath the sabotage.",
+          "prompts": [
+            "Finish this sentence three times: 'People like me don't…'",
+            "Where did you first learn each of those beliefs?"
+          ]
+        },
+        {
+          "id": "rewriting-narratives",
+          "title": "Rewriting Internal Narratives",
+          "kind": "reflection",
+          "summary": "Write the new story you'd rather be living from.",
+          "prompts": [
+            "Rewrite each 'People like me don't…' as a 'People like me do…'.",
+            "What's one tiny action this week that would make each new sentence true?"
+          ]
+        }
+      ],
+      "discussion": [
+        { "id": "own-way", "question": "How do you get in your own way?" },
+        { "id": "delayed-avoided", "question": "What opportunities have you delayed or avoided?" },
+        { "id": "fuel-sabotage", "question": "What beliefs fuel your self-sabotage?" },
+        { "id": "protecting-from", "question": "What are you protecting yourself from?" }
+      ],
+      "journal": {
+        "id": "journal-3",
+        "title": "Journal · Week Three",
+        "intro": "Sabotage: to deliberately destroy, damage or obstruct something.",
+        "prompts": [
+          { "id": "sabotaged-self", "question": "When you think of your life and how you would like for it to go, in what ways throughout the years have you sabotaged yourself?" },
+          { "id": "combat-sabotage", "question": "How can you specifically combat your own forms of sabotage?" }
+        ]
+      }
+    },
+    {
+      "id": "week-4",
+      "number": 4,
+      "title": "Big Things Start Small",
+      "theme": "Honoring the Small Starts for Long-Term Growth",
+      "objective": "Develop consistency, patience, discipline, and appreciation for small progress.",
+      "teachingPoints": [
+        {
+          "id": "comparison",
+          "title": "The Danger of Comparison Culture",
+          "body": [
+            "Comparison is the fastest thief of joy and the slowest thief of progress. You're measuring your behind-the-scenes against everyone else's highlight reel and concluding you're behind. You're not behind. You're just looking sideways instead of forward.",
+            "Your path is yours. The pace is yours. The middle is supposed to be unimpressive — that's why it's the middle. Stay in your own lane long enough to finish."
+          ],
+          "takeaways": [
+            "Your middle isn't behind. It's the middle.",
+            "Comparison is horizontal motion when growth is vertical.",
+            "Stay in your lane long enough to finish."
+          ]
+        },
+        {
+          "id": "consistency-over-intensity",
+          "title": "Consistency Over Intensity",
+          "body": [
+            "Intensity is one big push. Consistency is a small push, every day, for a long time. Intensity feels productive; consistency feels boring. Consistency wins.",
+            "Nobody changes their life with a single dramatic moment. They change it with hundreds of small, unimpressive choices made over months. The unsexy truth: showing up on the day you don't feel like it is the whole game."
+          ],
+          "takeaways": [
+            "Big pushes feel productive; small reps build the life.",
+            "Showing up on the bad days is the whole game.",
+            "Boring is a feature, not a bug."
+          ]
+        },
+        {
+          "id": "delayed-gratification",
+          "title": "Delayed Gratification & Long-Term Thinking",
+          "body": [
+            "Almost everything good takes longer than you'd like. The body you want, the savings you want, the calling you want, the relationship you want — all of them sit on the other side of a long stretch where it doesn't look like anything is working.",
+            "Long-term thinking is choosing your future self's reward over your present self's relief. Most days that's a small choice; cumulatively it's the choice that changes everything."
+          ],
+          "takeaways": [
+            "Most rewards live on the other side of 'is this even working?'",
+            "Trade present-self relief for future-self reward.",
+            "The choice is small. The compound is enormous."
+          ]
+        },
+        {
+          "id": "sustainable-habits",
+          "title": "Sustainable Habits, Not Heroic Streaks",
+          "body": [
+            "Heroic streaks feel good on day five and brutal on day forty. They're built on willpower, and willpower is a renewable but limited resource. Sustainable habits are built on systems — small enough that you can't say no, embedded in your day so they happen without negotiation.",
+            "Don't aim for the dramatic version. Aim for the version you'll still be doing on a hard week."
+          ],
+          "takeaways": [
+            "Willpower runs out. Systems don't.",
+            "Build for the hard week, not the easy one.",
+            "Smaller, more often, beats bigger, briefly."
+          ]
+        },
+        {
+          "id": "invisible-growth",
+          "title": "Growth Often Begins Invisibly",
+          "body": [
+            "Most growth happens in places no one applauds. Underground. In silence. The roots before the visible bloom. If you measure progress only by what others can see, you'll quit right before the breakthrough.",
+            "Trust the work. Trust the invisible part of it. The harvest comes — but the planting comes first, alone, in the dark."
+          ],
+          "takeaways": [
+            "Growth happens underground before it shows.",
+            "The invisible part is the longest part.",
+            "Quit early and you miss the bloom."
+          ]
+        },
+        {
+          "id": "progress-over-perfection",
+          "title": "Celebrating Progress, Not Demanding Perfection",
+          "body": [
+            "Perfection is a moving goalpost. By the time you hit it, you've already redrawn it further out. The cost is that you never get to celebrate, which means you never get to feel like the work is working.",
+            "Mark the small wins on purpose. Notice the version of you who couldn't have done this six months ago. Progress is fuel. Don't run on empty when you've earned the celebration."
+          ],
+          "takeaways": [
+            "Perfect is a goalpost that never stops moving.",
+            "Naming the small win refills the tank.",
+            "You did something six months ago you couldn't do then. Notice."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "habit-builder",
+          "title": "Habit-Building Workshop",
+          "kind": "habit-builder",
+          "summary": "Define one small habit, design the cue and reward, and track 30 days of practice."
+        },
+        {
+          "id": "goal-breakdown",
+          "title": "Goal Breakdown Exercise",
+          "kind": "reflection",
+          "summary": "Take one bigger goal and break it down to its smallest, doable next step.",
+          "prompts": [
+            "Name one meaningful goal that has felt too big to start.",
+            "Break it into 5 steps. Break the first step into 3 smaller actions. What's the very first one — small enough that you can't say no?"
+          ]
+        },
+        {
+          "id": "progress-mapping",
+          "title": "Progress Mapping",
+          "kind": "reflection",
+          "summary": "Look backward to see how far you've already come.",
+          "prompts": [
+            "Where were you 3 years ago in the area you most want to grow?",
+            "What small choices got you from there to here?"
+          ]
+        },
+        {
+          "id": "one-percent",
+          "title": "'1% Better' Daily Growth Challenge",
+          "kind": "reflection",
+          "summary": "Choose one area where you'll be 1% better this week — and define what that actually means.",
+          "prompts": [
+            "Which area of your life will get the 1% this week?",
+            "What would 'a little better than yesterday' specifically look like?"
+          ]
+        }
+      ],
+      "discussion": [
+        { "id": "small-start-dismissing", "question": "What 'small start' have you been dismissing?" },
+        { "id": "underestimated-consistency", "question": "Where have you underestimated consistency?" },
+        { "id": "long-term-commitment", "question": "What would happen if you committed long-term?" }
+      ],
+      "journal": {
+        "id": "journal-4",
+        "title": "Journal · Week Four",
+        "intro": "\"Do not despise the small beginnings…\" (Zechariah 4:10) — Consider the foundation of a home. A home can be as big as it wants to be, but the fact of the matter is, it'd be nothing without the much 'smaller' foundation. So don't despise the foundation. Not only is it necessary, but it is VALUABLE.",
+        "prompts": [
+          { "id": "small-but-integral", "question": "Think back on a time where years ago there was something you were working on or towards that seemed small and insignificant but fast forward, years later, you can see it was an integral part of who and where you are today. Write about it." }
+        ]
+      }
+    },
+    {
+      "id": "week-5",
+      "number": 5,
+      "title": "Living in Expectancy",
+      "theme": "Believing It Will Happen",
+      "objective": "Shift your mindset from possibility to expectancy — and develop confidence, faith, vision, and emotional alignment with the future you say you want.",
+      "teachingPoints": [
+        {
+          "id": "psychology-of-expectancy",
+          "title": "The Psychology of Expectancy",
+          "body": [
+            "Expectancy isn't hope. Hope says 'maybe.' Expectancy says 'when.' It's the posture of someone preparing for what they believe is coming, not just wishing for it.",
+            "The body and brain respond differently to expectancy than to hope. When you expect, you prepare. When you prepare, you move differently. When you move differently, you become someone the outcome can actually arrive to."
+          ],
+          "takeaways": [
+            "Hope says 'maybe.' Expectancy says 'when.'",
+            "Expectancy changes what you prepare for.",
+            "Preparation makes you receivable."
+          ]
+        },
+        {
+          "id": "belief-shapes-behavior",
+          "title": "How Belief Shapes Behavior",
+          "body": [
+            "What you really believe — under the affirmations, under the talk — quietly shapes what you do. If you believe somewhere underneath that it won't work out, you'll subtly self-protect. If you believe somewhere underneath that it will, you'll subtly invest.",
+            "Belief isn't decoration. It's an operating system, running every choice in the background. Upgrading the belief is upgrading the system."
+          ],
+          "takeaways": [
+            "Belief is an operating system, not a slogan.",
+            "Behavior follows underlying belief, not surface affirmation.",
+            "Upgrade the belief and the actions follow."
+          ]
+        },
+        {
+          "id": "fear-vs-expectancy",
+          "title": "Fear-Based vs. Expectancy Thinking",
+          "body": [
+            "Fear-based thinking is constantly hedging. It says: don't get your hopes up, don't ask too loudly, don't risk the disappointment. It feels like wisdom and is actually limitation.",
+            "Expectancy thinking moves bolder. It says: I'm planning my life as though this is coming. Yes, it might not — but I'm not going to live small in case. Live large enough that life has room to meet you."
+          ],
+          "takeaways": [
+            "Fear-thinking calls itself wisdom.",
+            "Expectancy-thinking gives the future room to arrive.",
+            "Live large enough to be met."
+          ]
+        },
+        {
+          "id": "align-actions",
+          "title": "Aligning Actions with Outcomes",
+          "body": [
+            "Saying you want it isn't aligning with it. Aligning means your calendar reflects it, your money reflects it, your friendships reflect it, your habits reflect it. The future you say you want should be findable in this week's choices.",
+            "If a stranger looked at your last seven days, would they correctly guess what you say you're building? If not, the gap is the work."
+          ],
+          "takeaways": [
+            "Wanting isn't aligning.",
+            "The calendar tells the truth about belief.",
+            "The gap between words and weeks is the work."
+          ]
+        },
+        {
+          "id": "survival-to-vision",
+          "title": "From Survival to Vision",
+          "body": [
+            "Survival mentality is short-horizon. Get through today. Don't think about next year, it's overwhelming. Vision mentality is long-horizon. Today is one move in a longer game.",
+            "Survival is a season; it isn't a destination. When you've been there a long time, the shift can feel disorienting. But thriving requires you to start thinking past tomorrow. Vision lets you make better choices today."
+          ],
+          "takeaways": [
+            "Survival is a season, not a setting.",
+            "Vision is a horizon — it doesn't require certainty.",
+            "Long-horizon thinking improves today's choices."
+          ]
+        },
+        {
+          "id": "prepared-confidence",
+          "title": "Confidence Rooted in Preparation and Faith",
+          "body": [
+            "Bravado is loud and brittle. Real confidence is quiet and durable, because it's rooted in two things: you've prepared, and you trust the source you came from.",
+            "You don't need to know the whole road. You need to know your next step is informed and your standing isn't borrowed. Prepared faith walks differently than performed certainty."
+          ],
+          "takeaways": [
+            "Bravado is loud. Confidence is quiet.",
+            "Preparation builds the floor.",
+            "Faith holds you over the rest."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "vision-casting",
+          "title": "Vision Casting Exercise",
+          "kind": "vision-casting",
+          "summary": "Cast a clear one-year vision across the major domains of your life, and write the expectancy statement that anchors it."
+        },
+        {
+          "id": "visualization-meditation",
+          "title": "Visualization Meditation",
+          "kind": "reflection",
+          "summary": "Sit with your future self for 10 minutes and capture what you see.",
+          "prompts": [
+            "Describe a single ordinary day one year from now — what you wake to, what you do, what you feel.",
+            "What's one detail of that day that surprised you?"
+          ]
+        },
+        {
+          "id": "future-self-embodiment",
+          "title": "Future Self Embodiment",
+          "kind": "reflection",
+          "summary": "What would change today if you were already the person you're becoming?",
+          "prompts": [
+            "List three things your future self does that you don't yet.",
+            "Pick one to do this week."
+          ]
+        },
+        {
+          "id": "affirmation-declaration",
+          "title": "Affirmation & Declaration Workshop",
+          "kind": "reflection",
+          "summary": "Write the declarations you'll repeat to yourself daily.",
+          "prompts": [
+            "Write three affirmations in the present tense (I am…, I have…, I'm becoming…).",
+            "When will you say them, and where?"
+          ]
+        }
+      ],
+      "discussion": [
+        { "id": "expecting-from-life", "question": "What are you expecting from life right now?" },
+        { "id": "habits-reflect-belief", "question": "Do your habits reflect belief in your future?" },
+        { "id": "disappointment-impact", "question": "Where has disappointment impacted your expectancy?" }
+      ],
+      "journal": {
+        "id": "journal-5",
+        "title": "Journal · Week Five",
+        "intro": "When you expect something, that means you assuredly believe it is going to happen, not that it 'can' happen. You wait with conviction that it is yours and have a boldness that's unquestionable.",
+        "prompts": [
+          { "id": "expecting-or-believing", "question": "What are we expecting or believing to be ours?" },
+          { "id": "potential-hindrances", "question": "Now, be real with yourself. What are potential things that can stand in the way of your expectations?" },
+          { "id": "address-hindrances", "question": "Lastly, how can we address those potential hindrances, so that we get every last thing we have a strong belief for?" }
+        ]
+      }
+    },
+    {
+      "id": "week-6",
+      "number": 6,
+      "title": "It's Time to Leap",
+      "theme": "Let's Jump!",
+      "objective": "Take action despite fear and transition from preparation into movement.",
+      "teachingPoints": [
+        {
+          "id": "fear-and-faith",
+          "title": "Fear and Faith Coexist",
+          "body": [
+            "The myth is that courageous people don't feel fear. The truth is they feel it and move anyway. Fear and faith live in the same room. The question isn't whether the fear is there; it's whose voice you let lead.",
+            "Faith doesn't mean fearlessness. It means deciding, in the presence of fear, that the next step is still yours to take."
+          ],
+          "takeaways": [
+            "Courage isn't the absence of fear.",
+            "Fear and faith share the room.",
+            "Leadership is choosing whose voice wins the moment."
+          ]
+        },
+        {
+          "id": "waiting-for-certainty",
+          "title": "Waiting for Certainty Delays Growth",
+          "body": [
+            "Certainty is a story we tell ourselves to feel safer. Real life rarely hands it over before it asks you to act. If you wait until you're sure, you'll wait forever — and the version of you who needed to leap will quietly move on.",
+            "You're not supposed to be sure. You're supposed to be willing. Action creates the data certainty pretends to require."
+          ],
+          "takeaways": [
+            "You'll never be sure. That's normal.",
+            "Willingness > certainty.",
+            "Action produces the data; waiting doesn't."
+          ]
+        },
+        {
+          "id": "leaving-old-self",
+          "title": "Leaving Old Versions of Yourself",
+          "body": [
+            "Becoming someone new requires grieving someone old. The version of you who didn't know better, didn't dare yet, didn't have these tools — she got you here. You don't dishonor her by becoming someone else. You honor her by carrying what she taught you and putting down what she carried.",
+            "Write the goodbye if you have to. Hold the door for her gently. Then step through."
+          ],
+          "takeaways": [
+            "Becoming new requires grieving old.",
+            "Honor the old self by carrying what she taught you.",
+            "Put down what she carried that isn't yours anymore."
+          ]
+        },
+        {
+          "id": "discomfort-of-transition",
+          "title": "The Discomfort of Transition Is Part of It",
+          "body": [
+            "Transitions are uncomfortable by design. You've left the old shore and haven't reached the new one yet. The in-between is loud, lonely, and tempting to flee. Most people turn back here.",
+            "The discomfort is not a sign you made the wrong call. It's a sign you actually moved. The other side is on the other side."
+          ],
+          "takeaways": [
+            "In-between is uncomfortable by design.",
+            "Discomfort is movement, not warning.",
+            "The shore is on the other side. Keep going."
+          ]
+        },
+        {
+          "id": "leaving-going-clarity",
+          "title": "Define Where You're Leaving & Where You're Going",
+          "body": [
+            "Vague leaps don't land. 'Something different' is not a destination. Clarity is a kindness to yourself: name what you're leaving, name what you're stepping into, name the leap that connects them.",
+            "Specificity is the bridge. The clearer you can be about the where and the what, the more your daily decisions know how to vote."
+          ],
+          "takeaways": [
+            "Vague leaps don't land.",
+            "Name the leaving. Name the becoming. Name the bridge.",
+            "Clarity helps daily decisions vote correctly."
+          ]
+        }
+      ],
+      "activities": [
+        {
+          "id": "bridge-future",
+          "title": "Bridge to the Future",
+          "kind": "bridge-future",
+          "summary": "Map who you are leaving and who you are becoming — then design the leap that bridges them, with a concrete 90-day plan."
+        },
+        {
+          "id": "fear-inventory",
+          "title": "Fear Inventory",
+          "kind": "reflection",
+          "summary": "Name the fears underneath the leap so they lose their power.",
+          "prompts": [
+            "What are you most afraid will happen if you actually leap?",
+            "What's a more likely outcome based on the evidence of your life?"
+          ]
+        },
+        {
+          "id": "commitment-declaration",
+          "title": "Commitment Declaration",
+          "kind": "reflection",
+          "summary": "Make a clear, written commitment to the next bold step.",
+          "prompts": [
+            "Write a one-sentence commitment, beginning with 'By [date], I will…'.",
+            "Who will you tell so it becomes real?"
+          ]
+        },
+        {
+          "id": "accountability-discussion",
+          "title": "Group Accountability Discussion",
+          "kind": "reflection",
+          "summary": "How will you stay accountable past the closing session? Capture your thoughts to bring into the conversation.",
+          "prompts": [
+            "Who is your accountability partner past this masterclass?",
+            "What's the check-in cadence — and the consequence if you miss it?"
+          ]
+        }
+      ],
+      "discussion": [
+        { "id": "leave-behind", "question": "What are you being called to leave behind?" },
+        { "id": "leap-avoiding", "question": "What leap have you been avoiding?" },
+        { "id": "trust-yourself", "question": "What would your life look like if you trusted yourself fully?" }
+      ],
+      "journal": {
+        "id": "journal-6",
+        "title": "Journal · Week Six",
+        "intro": "Leap means to make a LARGE jump. Usually from ONE place to ANOTHER. As we wrap, you are declaring you will apply these principles and keep the commitment to the business of YOU.",
+        "prompts": [
+          { "id": "coming-from-going", "question": "Where are you coming from and where are you going?" },
+          { "id": "refuse-without", "question": "List three things you absolutely refuse to not have this year." },
+          { "id": "commit-goals", "question": "What are three ways you'll commit to those goals?" }
+        ]
+      }
+    }
+  ],
+  "closing": {
+    "title": "Closing Session · Graduation",
+    "subtitle": "Reflection & Integration",
+    "body": [
+      "Share your biggest breakthrough.",
+      "Reflect on the transformation, however quiet, that has actually happened.",
+      "Celebrate the progress and the courage it took to do this work."
+    ],
+    "finalTakeaway": "You cannot become who you desire to be while remaining committed to who you used to be. Healing, growth, and transformation require intentionality, expectancy, and the courage to leap."
+  }
+}

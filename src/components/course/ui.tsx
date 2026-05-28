@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Check, ChevronLeft, ChevronRight, Circle } from 'lucide-react';
 import { useCourseProgress } from './CourseProgress';
-import { getWeek, weekSteps, type Step, type Week } from '../../data/course';
+import { getWeek, weekSteps, type Course, type ProgressKind, type Step, type Week } from '../../data/course';
 
 /** Thin progress bar with optional count label. */
 export function ProgressBar({
@@ -47,20 +47,22 @@ export function Crumbs({ items }: { items: { label: string; to?: string }[] }) {
 
 /** Mark-complete toggle button. */
 export function CompleteToggle({
+  courseId,
   weekId,
   kind,
   id,
 }: {
+  courseId: string;
   weekId: string;
-  kind: 'topic' | 'activity';
+  kind: ProgressKind;
   id: string;
 }) {
   const { isComplete, toggle } = useCourseProgress();
-  const done = isComplete(weekId, kind, id);
+  const done = isComplete(courseId, weekId, kind, id);
   return (
     <button
       type="button"
-      onClick={() => toggle(weekId, kind, id)}
+      onClick={() => toggle(courseId, weekId, kind, id)}
       className={[
         'inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all',
         done
@@ -75,18 +77,31 @@ export function CompleteToggle({
 }
 
 function stepHref(step: Step): string {
-  return `/course/${step.weekId}/${step.kind}/${step.id}`;
+  const segment =
+    step.kind === 'topic'
+      ? 'topic'
+      : step.kind === 'activity'
+        ? 'activity'
+        : step.kind === 'discussion'
+          ? 'discussion'
+          : step.kind === 'journal'
+            ? 'journal'
+            : step.kind === 'teaching'
+              ? 'teaching'
+              : null;
+  if (!segment) return `/courses/${step.courseId}/${step.weekId}`;
+  return `/courses/${step.courseId}/${step.weekId}/${segment}/${step.id}`;
 }
 
-/** Previous / next navigation across the topics + activities of a week. */
-export function StepNav({ week, currentId }: { week: Week; currentId: string }) {
-  const steps = weekSteps(week);
+/** Previous / next navigation across the items of a week. */
+export function StepNav({ course, week, currentId }: { course: Course; week: Week; currentId: string }) {
+  const steps = weekSteps(course.id, week);
   const idx = steps.findIndex((s) => s.id === currentId);
   const prev = idx > 0 ? steps[idx - 1] : null;
   const next = idx >= 0 && idx < steps.length - 1 ? steps[idx + 1] : null;
 
   // When at the end of a week, point "next" to the following week's overview.
-  const nextWeek = getWeek(`week-${week.number + 1}`);
+  const nextWeek = getWeek(course, `week-${week.number + 1}`);
 
   return (
     <div className="mt-12 flex items-center justify-between gap-4 border-t border-bone/10 pt-6">
@@ -99,7 +114,7 @@ export function StepNav({ week, currentId }: { week: Week; currentId: string }) 
           <span className="truncate">{prev.title}</span>
         </Link>
       ) : (
-        <Link to={`/course/${week.id}`} className="inline-flex items-center gap-2 text-sm text-bone hover:text-paper">
+        <Link to={`/courses/${course.id}/${week.id}`} className="inline-flex items-center gap-2 text-sm text-bone hover:text-paper">
           <ChevronLeft size={16} /> Week overview
         </Link>
       )}
@@ -114,13 +129,13 @@ export function StepNav({ week, currentId }: { week: Week; currentId: string }) 
         </Link>
       ) : nextWeek ? (
         <Link
-          to={`/course/${nextWeek.id}`}
+          to={`/courses/${course.id}/${nextWeek.id}`}
           className="inline-flex items-center gap-2 text-sm font-medium text-flame hover:text-paper"
         >
           Week {nextWeek.number}: {nextWeek.theme} <ChevronRight size={16} />
         </Link>
       ) : (
-        <Link to="/course" className="inline-flex items-center gap-2 text-sm font-medium text-flame hover:text-paper">
+        <Link to={`/courses/${course.id}`} className="inline-flex items-center gap-2 text-sm font-medium text-flame hover:text-paper">
           Finish <ChevronRight size={16} />
         </Link>
       )}
