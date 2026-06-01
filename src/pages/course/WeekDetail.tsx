@@ -60,7 +60,7 @@ export default function WeekDetail() {
             Each teaching unlocks the next. Once all are complete, the activities, discussion, and
             journal open up.
           </p>
-          <ol className="space-y-3">
+          <ol className="grid gap-2 md:grid-cols-2">
             {teachingPoints.map((tp, i) => {
               const done = isComplete(course.id, week.id, 'teaching', tp.id);
               const tpUnlocked = isTeachingPointUnlocked(course, week, tp.id);

@@ -60,7 +60,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.4, ease }}
             className="mt-8 max-w-xl text-balance text-lg text-bone md:text-xl"
           >
-             Don’t allow one bad one to consume the other 23. I&apos;m Tiaera —
+             Don’t allow a bad one to consume the other 23. I&apos;m Tiaera —
             and I've made it my life's mission to help people unpack, heal, and evolve into their healthiest and most empowered selves.
           </motion.p>
 

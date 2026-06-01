@@ -1,4 +1,6 @@
 import type { ActivityProps } from './types';
+import { useState } from 'react';
+import { X } from 'lucide-react';
 import { useWork, ClearWork } from './Shared';
 import { AddButton, Labeled, Panel, RemoveButton, Segmented, TextInput } from '../fields';
 
@@ -20,22 +22,40 @@ const EFFECTS: { value: Effect; label: string }[] = [
   { value: 'both', label: 'Both' },
 ];
 
-const SUGGESTIONS = ['Daughter', 'Mother', 'Strong one', 'Provider', 'The fixer', 'Survivor', 'Caretaker'];
+const SUGGESTIONS = ['Daughter', 'Son', 'Mother', 'Father', 'Wife', 'Husband', 'Strong one', 'Provider', 'The fixer', 'Survivor', 'Caretaker'];
 
 type Row = { id: string; text: string; source: Source; effect: Effect };
-type State = { rows: Row[] };
+type State = { rows: Row[]; customSuggestions: string[] };
 
 const uid = () => Math.random().toString(36).slice(2, 9);
 const blank = (text = ''): Row => ({ id: uid(), text, source: 'self', effect: 'both' });
 
 export default function IdentityInventory({ activity, courseId, weekId }: ActivityProps) {
-  const [state, setState, reset] = useWork<State>(courseId, weekId, activity.id, { rows: [blank()] });
+  const [state, setState, reset] = useWork<State>(courseId, weekId, activity.id, {
+    rows: [blank()],
+    customSuggestions: [],
+  });
+  const [customEntry, setCustomEntry] = useState('');
+  // Defensive read — saved work from before this field existed won't have it.
+  const customSuggestions = state.customSuggestions ?? [];
 
   const update = (id: string, patch: Partial<Row>) =>
-    setState((p) => ({ rows: p.rows.map((r) => (r.id === id ? { ...r, ...patch } : r)) }));
-  const add = (text = '') => setState((p) => ({ rows: [...p.rows, blank(text)] }));
+    setState((p) => ({ ...p, rows: p.rows.map((r) => (r.id === id ? { ...r, ...patch } : r)) }));
+  const add = (text = '') => setState((p) => ({ ...p, rows: [...p.rows, blank(text)] }));
   const remove = (id: string) =>
-    setState((p) => ({ rows: p.rows.length > 1 ? p.rows.filter((r) => r.id !== id) : p.rows }));
+    setState((p) => ({ ...p, rows: p.rows.length > 1 ? p.rows.filter((r) => r.id !== id) : p.rows }));
+  const addCustomEntry = () => {
+    const text = customEntry.trim();
+    if (!text) return;
+    // Append to the chip list (dedup case-insensitively against built-ins and existing customs).
+    const existing = [...SUGGESTIONS, ...customSuggestions];
+    if (!existing.some((s) => s.toLowerCase() === text.toLowerCase())) {
+      setState((p) => ({ ...p, customSuggestions: [...(p.customSuggestions ?? []), text] }));
+    }
+    setCustomEntry('');
+  };
+  const removeCustomSuggestion = (s: string) =>
+    setState((p) => ({ ...p, customSuggestions: (p.customSuggestions ?? []).filter((x) => x !== s) }));
 
   const named = state.rows.filter((r) => r.text.trim());
   const strengthens = named.filter((r) => r.effect === 'strengthens' || r.effect === 'both');
@@ -56,6 +76,49 @@ export default function IdentityInventory({ activity, courseId, weekId }: Activi
               + {s}
             </button>
           ))}
+          {customSuggestions.map((s) => (
+            <span
+              key={s}
+              className="inline-flex items-center overflow-hidden rounded-full border border-flame/40 bg-flame/5"
+            >
+              <button
+                type="button"
+                onClick={() => add(s)}
+                className="px-3 py-1.5 text-sm text-paper transition-colors hover:bg-flame/15"
+              >
+                + {s}
+              </button>
+              <button
+                type="button"
+                onClick={() => removeCustomSuggestion(s)}
+                aria-label={`Remove ${s} from list`}
+                className="grid h-full w-7 place-items-center border-l border-flame/30 text-bone/60 transition-colors hover:bg-flame/20 hover:text-flame"
+              >
+                <X size={11} />
+              </button>
+            </span>
+          ))}
+        </div>
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+          <TextInput
+            value={customEntry}
+            onChange={(e) => setCustomEntry(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                addCustomEntry();
+              }
+            }}
+            placeholder="Add a label to the list (e.g. Mentor, Eldest, Caretaker)"
+          />
+          <button
+            type="button"
+            onClick={addCustomEntry}
+            disabled={customEntry.trim().length === 0}
+            className="shrink-0 rounded-full border border-bone/20 px-4 py-2 text-sm text-bone transition-colors hover:border-flame/60 hover:text-paper disabled:opacity-40 disabled:hover:border-bone/20 disabled:hover:text-bone"
+          >
+            Add to list
+          </button>
         </div>
       </div>
 

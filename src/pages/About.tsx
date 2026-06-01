@@ -22,6 +22,29 @@ export default function About() {
               Whitney M. Young Jr. School of Social Work in Fall 2026.
             </p>
           </div>
+          <div className="lg:col-span-5">
+            <Reveal delay={0.1}>
+              <Link
+                to="/shop"
+                aria-label="Truth Moment by Tiaera Pritchett — view in shop"
+                className="group relative mx-auto block aspect-2/3 w-full max-w-sm"
+              >
+                <div className="h-full overflow-hidden rounded-2xl shadow-2xl shadow-flame/10 transition-all duration-700 group-hover:-translate-y-1 group-hover:shadow-flame/25">
+                  <img
+                    src="/images/brand/ebook.jpg"
+                    alt="Truth Moment: We Could All Use Some New Habits — 21 Days to Look at Things Differently, by Tiaera Pritchett, LMSW"
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                {/* Floating tag, mirroring the home-hero quote card pattern she liked. */}
+                <div className="absolute -bottom-3 -left-3 inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-[10px] uppercase tracking-[0.22em] text-paper shadow-xl ring-1 ring-bone/10">
+                  <BookOpen size={13} className="text-flame" />
+                  Purchase · in shop
+                </div>
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </section>
 
