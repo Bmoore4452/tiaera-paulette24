@@ -60,7 +60,7 @@ export default function Nav() {
               >
                 {({ isActive }) => (
                   <>
-                    {l.label}
+                    <NavLabel link={l} variant="desktop" isActive={isActive} />
                     {isActive && (
                       <motion.span
                         layoutId="nav-underline"
@@ -110,7 +110,7 @@ export default function Nav() {
                         }`
                       }
                     >
-                      {l.label}
+                      {({ isActive }) => <NavLabel link={l} variant="mobile" isActive={isActive} />}
                     </NavLink>
                   </li>
                 ))}
@@ -126,4 +126,28 @@ export default function Nav() {
       </AnimatePresence>
     </header>
   );
+}
+
+/**
+ * Renders a nav link's visible text. Most links inherit the parent's
+ * bone/paper color cycle; `/Gems` gets Fraunces-italic in flame so it reads
+ * as distinct without borrowing from the active-state vocabulary (which is
+ * flame underline on desktop, flame pill on mobile). The one inversion: on
+ * mobile when Gems is the active page, the text flips to paper so it stays
+ * legible against the flame pill background.
+ */
+function NavLabel({
+  link,
+  variant,
+  isActive,
+}: {
+  link: { to: string; label: string };
+  variant: 'desktop' | 'mobile';
+  isActive: boolean;
+}) {
+  if (link.to === '/Gems') {
+    const textColor = variant === 'mobile' && isActive ? 'text-paper' : 'text-flame';
+    return <span className={`font-serif italic ${textColor}`}>{link.label}</span>;
+  }
+  return <>{link.label}</>;
 }
