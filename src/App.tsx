@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import CheckoutSuccess from './pages/CheckoutSuccess';
 import CheckoutCancel from './pages/CheckoutCancel';
 import NotFound from './pages/NotFound';
+import Gems from './pages/Gems';
 import CoursesIndex from './pages/course/CoursesIndex';
 import CoursePage from './pages/course/CoursePage';
 import WeekDetail from './pages/course/WeekDetail';
@@ -37,6 +38,8 @@ export default function App() {
               <Route path="/masterclasses" element={<Masterclasses />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/Gems" element={<Gems />} />
+              <Route path="/gems" element={<Gems />} />
 
               <Route path="/courses" element={<CoursesIndex />} />
               <Route path="/courses/:courseId" element={<CoursePage />} />
