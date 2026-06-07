@@ -43,8 +43,8 @@ export default function Nav() {
             height={56}
             className="h-12 w-12 transition-transform duration-500 group-hover:rotate-3 md:h-14 md:w-14"
           />
-          <span className="font-serif text-lg tracking-tight text-flame align-bottom ml-2 mt-6">
-            Tiaera <span className="text-bone">Paulette</span><span className="text-xs font-normal text-flame align-bottom">24</span>
+          <span className="ml-2 font-serif text-lg leading-none tracking-tight text-flame">
+            Tiaera <span className="text-bone">Paulette</span><span className="align-super text-[0.6em] font-normal text-flame">24</span>
           </span>
         </Link>
 
@@ -54,7 +54,7 @@ export default function Nav() {
               <NavLink
                 to={l.to}
                 className={({ isActive }) =>
-                  `relative px-4 py-2 text-sm tracking-wide transition-colors ${isActive ? 'text-paper' : 'text-bone hover:text-paper'
+                  `relative px-3 py-2 text-sm tracking-wide transition-colors lg:px-4 ${isActive ? 'text-paper' : 'text-bone hover:text-paper'
                   }`
                 }
               >
@@ -76,7 +76,10 @@ export default function Nav() {
         </ul>
 
         <div className="hidden md:block">
-          <Link to="/speaking" className="btn-primary">
+          <Link
+            to="/speaking"
+            className="btn-primary whitespace-nowrap px-4 py-2.5 text-xs lg:px-7 lg:py-3.5 lg:text-sm"
+          >
             Book Tiaera
           </Link>
         </div>

@@ -169,9 +169,9 @@ export default function IdentityInventory({ activity, courseId, weekId }: Activi
 function Column({ title, accent, rows }: { title: string; accent: string; rows: Row[] }) {
   return (
     <div>
-      <div className="mb-3 flex items-center gap-2">
-        <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: accent }} />
-        <span className="text-sm uppercase tracking-[0.18em] text-bone">{title}</span>
+      <div className="mb-3 flex min-h-11 items-start gap-2">
+        <span className="mt-1.25 h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: accent }} />
+        <span className="text-sm uppercase leading-snug tracking-[0.18em] text-bone">{title}</span>
       </div>
       {rows.length === 0 ? (
         <p className="rounded-xl border border-dashed border-bone/15 p-4 text-xs text-bone/50">
