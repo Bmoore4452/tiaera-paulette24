@@ -106,7 +106,7 @@
         },
         {
           "id": "labels-discussion",
-          "title": "Group Discussion · Labels We Carry",
+          "title": "Course Discussion · Labels We Carry",
           "kind": "reflection",
           "summary": "A small-group discussion on the labels participants carry. Capture your own reflections here first.",
           "prompts": [
@@ -136,11 +136,7 @@
         }
       ],
       "discussion": [
-        { "id": "no-one-needs", "question": "Who are you when no one needs anything from you?" },
-        { "id": "labels-shaped", "question": "What labels have shaped your life?" },
-        { "id": "labels-motivate", "question": "Which labels motivate you?" },
-        { "id": "labels-limit", "question": "Which labels limit you?" },
-        { "id": "identity-outgrown", "question": "What identity have you outgrown?" }
+        { "id": "no-one-needs", "question": "Who are you when no one needs anything from you?" }
       ],
       "journal": {
         "id": "journal-1",
@@ -148,7 +144,7 @@
         "intro": "Identity: condition or character as to who or what a thing is; qualities, beliefs, etc. that distinguishes or identifies a person or thing.",
         "prompts": [
           { "id": "list-labels", "question": "List some of your labels." },
-          { "id": "labels-wanted", "question": "Are there any labels you don't possess but would like to?" },
+          { "id": "labels-shaped", "question": "What labels have shaped your life?" },
           { "id": "labels-to-remove", "question": "If empower means to strengthen and cuff can be thought of as limiting or to hold one back, which of your labels should you remove despite it potentially being uncomfortable to do so?" },
           { "id": "letter-to-self", "question": "Write a letter to yourself introducing who you desire to become." }
         ]

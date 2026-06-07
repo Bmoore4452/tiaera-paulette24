@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Routes, Route, useLocation, Navigate, useParams } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Nav from './components/layout/Nav';
@@ -27,6 +28,7 @@ export default function App() {
 
   return (
     <CourseProgressProvider>
+      <ScrollToTop />
       <div className="flex min-h-screen flex-col bg-ink text-paper">
         <Nav />
         <main className="flex-1">
@@ -66,6 +68,22 @@ export default function App() {
       </div>
     </CourseProgressProvider>
   );
+}
+
+/**
+ * Resets scroll to the top on every navigation. React Router preserves the prior
+ * scroll position by default, which left you stranded mid-page after switching routes.
+ * Skips when the URL carries a hash so in-page anchor links still work.
+ */
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) return;
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [pathname, hash]);
+
+  return null;
 }
 
 /** Tiny redirect shims for old /course/* deep links shared before the multi-course refactor. */
