@@ -90,10 +90,12 @@ export default function DiscussionPage() {
 
         <p className="mt-6 text-sm uppercase tracking-[0.2em] text-flame">{week.theme}</p>
         <h1 className="mt-3 text-balance font-serif text-3xl text-paper md:text-4xl">{question.question}</h1>
+        <div className="mt-3 grid gap-3 md:grid-cols-2 md:items-center sm:gap-5">
         <p className="mt-4 inline-flex items-center gap-2 text-sm text-bone">
-          <MessagesSquare size={15} className="text-flame" /> Open thread · the cohort can read and respond
+          <MessagesSquare size={15} className="text-flame " /> Open thread · the cohort can read and respond
         </p>
         <AutosaveNote />
+        </div>
 
         {!unlocked ? (
           <div className="mt-10 rounded-3xl border border-bone/15 bg-ink-soft/40 p-8 text-center">

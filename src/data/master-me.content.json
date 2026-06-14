@@ -136,7 +136,8 @@
         }
       ],
       "discussion": [
-        { "id": "no-one-needs", "question": "Who are you when no one needs anything from you?" }
+        { "id": "no-one-needs", "question": "Who are you when no one needs anything from you?" },
+        { "id": "labels-shaped", "question": "What labels have shaped your life?" }
       ],
       "journal": {
         "id": "journal-1",
