@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import type { ActivityProps } from './types';
 import { useWork, ClearWork } from './Shared';
 import { AddButton, Labeled, Panel, RemoveButton, Segmented, TextInput } from '../fields';
@@ -18,7 +19,30 @@ const ENERGIES: { value: Energy; label: string }[] = [
 
 const TIME_X: Record<Time, number> = { low: 0.18, med: 0.5, high: 0.82 };
 const ENERGY_Y: Record<Energy, number> = { drain: 0.18, neutral: 0.5, gain: 0.82 };
-const ENERGY_COLOR: Record<Energy, string> = { drain: '#9ca3af', neutral: '#a78bfa', gain: '#F2052C' };
+
+// One distinct color per activity (by its position in the list). Energy is
+// already encoded by the vertical axis, so color is free to identify the dot.
+const PALETTE = [
+  '#F2052C', // flame
+  '#38bdf8', // sky
+  '#a78bfa', // violet
+  '#34d399', // emerald
+  '#fbbf24', // amber
+  '#fb7185', // rose
+  '#22d3ee', // cyan
+  '#c084fc', // purple
+  '#4ade80', // green
+  '#f97316', // orange
+];
+
+const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
+
+// Stable per-cell hash so an on-axis cluster always picks the same quadrant.
+const hashKey = (s: string) => {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+  return h;
+};
 
 type Row = { id: string; name: string; time: Time; energy: Energy };
 type State = { rows: Row[]; notes: string };
@@ -38,7 +62,58 @@ export default function TimeEnergyAudit({ activity, courseId, weekId }: Activity
   const remove = (id: string) =>
     setState((p) => ({ ...p, rows: p.rows.length > 1 ? p.rows.filter((r) => r.id !== id) : p.rows }));
 
-  const plotted = state.rows.filter((r) => r.name.trim());
+  // Color is stable per activity (its index in the list), so editing one row
+  // doesn't recolor the others.
+  const colorOf = useMemo(() => {
+    const map = new Map<string, string>();
+    state.rows.forEach((r, i) => map.set(r.id, PALETTE[i % PALETTE.length]));
+    return map;
+  }, [state.rows]);
+
+  // Group plotted points by their grid cell. A lone point sits at its honest
+  // position. When several share a cell, fan them out into a ring — but anchor
+  // that ring inside a single quadrant and clear of the center gridlines, so a
+  // shared cell that lands on an axis (med time / neutral energy) doesn't put
+  // dots on the line or spill across quadrants.
+  const points = useMemo(() => {
+    const plotted = state.rows.filter((r) => r.name.trim());
+    const cells = new Map<string, Row[]>();
+    for (const r of plotted) {
+      const key = `${r.time}:${r.energy}`;
+      const group = cells.get(key);
+      if (group) group.push(r);
+      else cells.set(key, [r]);
+    }
+
+    const laid: { row: Row; left: number; bottom: number }[] = [];
+    for (const [key, group] of cells) {
+      if (group.length === 1) {
+        laid.push({
+          row: group[0],
+          left: TIME_X[group[0].time] * 100,
+          bottom: ENERGY_Y[group[0].energy] * 100,
+        });
+        continue;
+      }
+      // On-axis values (50%) get pushed to one side, picked deterministically
+      // per cell so the whole group lands in the same quadrant; off-axis values
+      // keep their true 18%/82% position. Radius stays under that offset so the
+      // ring never crosses back over the center line.
+      const h = hashKey(key);
+      const anchorLeft = group[0].time === 'med' ? (h & 1 ? 62 : 38) : TIME_X[group[0].time] * 100;
+      const anchorBottom = group[0].energy === 'neutral' ? (h & 2 ? 62 : 38) : ENERGY_Y[group[0].energy] * 100;
+      const radius = Math.min(8, 3 + group.length);
+      group.forEach((row, i) => {
+        const angle = (i / group.length) * Math.PI * 2 - Math.PI / 2;
+        laid.push({
+          row,
+          left: clamp(anchorLeft + Math.cos(angle) * radius, 6, 94),
+          bottom: clamp(anchorBottom + Math.sin(angle) * radius, 6, 94),
+        });
+      });
+    }
+    return laid;
+  }, [state.rows]);
 
   return (
     <div className="space-y-8">
@@ -51,7 +126,13 @@ export default function TimeEnergyAudit({ activity, courseId, weekId }: Activity
       {state.rows.map((row, i) => (
         <Panel key={row.id}>
           <div className="mb-4 flex items-center justify-between gap-3">
-            <span className="font-serif text-lg text-flame">Activity {i + 1}</span>
+            <span className="flex items-center gap-2 font-serif text-lg text-flame">
+              <span
+                className="h-3 w-3 rounded-full ring-2 ring-ink/60"
+                style={{ backgroundColor: PALETTE[i % PALETTE.length] }}
+              />
+              Activity {i + 1}
+            </span>
             <RemoveButton onClick={() => remove(row.id)} />
           </div>
           <div className="space-y-4">
@@ -97,21 +178,24 @@ export default function TimeEnergyAudit({ activity, courseId, weekId }: Activity
               <span className="absolute left-2 bottom-2 text-[10px] uppercase tracking-wider text-bone/40">
                 Cut or reduce
               </span>
-              {plotted.map((r) => (
+              {points.map(({ row, left, bottom }) => (
                 <div
-                  key={r.id}
+                  key={row.id}
                   className="absolute -translate-x-1/2 translate-y-1/2"
-                  style={{ left: `${TIME_X[r.time] * 100}%`, bottom: `${ENERGY_Y[r.energy] * 100}%` }}
+                  style={{ left: `${left}%`, bottom: `${bottom}%` }}
                 >
                   <div className="flex flex-col items-center gap-1">
-                    <span className="h-3 w-3 rounded-full" style={{ backgroundColor: ENERGY_COLOR[r.energy] }} />
+                    <span
+                      className="h-3 w-3 rounded-full ring-2 ring-ink/60"
+                      style={{ backgroundColor: colorOf.get(row.id) }}
+                    />
                     <span className="max-w-[90px] truncate rounded bg-ink/80 px-1.5 py-0.5 text-[10px] text-paper">
-                      {r.name}
+                      {row.name}
                     </span>
                   </div>
                 </div>
               ))}
-              {plotted.length === 0 && (
+              {points.length === 0 && (
                 <span className="absolute inset-0 grid place-items-center text-xs text-bone/40">
                   Name an activity above to plot it
                 </span>

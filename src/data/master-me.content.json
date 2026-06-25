@@ -136,8 +136,14 @@
         }
       ],
       "discussion": [
-        { "id": "no-one-needs", "question": "Who are you when no one needs anything from you?" },
-        { "id": "labels-shaped", "question": "What labels have shaped your life?" }
+        {
+          "id": "no-one-needs",
+          "question": "Who are you when no one needs anything from you?"
+        },
+        {
+          "id": "labels-shaped",
+          "question": "What labels have shaped your life?"
+        }
       ],
       "journal": {
         "id": "journal-1",
@@ -145,9 +151,18 @@
         "intro": "Identity: condition or character as to who or what a thing is; qualities, beliefs, etc. that distinguishes or identifies a person or thing.",
         "prompts": [
           { "id": "list-labels", "question": "List some of your labels." },
-          { "id": "labels-shaped", "question": "What labels have shaped your life?" },
-          { "id": "labels-to-remove", "question": "If empower means to strengthen and cuff can be thought of as limiting or to hold one back, which of your labels should you remove despite it potentially being uncomfortable to do so?" },
-          { "id": "letter-to-self", "question": "Write a letter to yourself introducing who you desire to become." }
+          {
+            "id": "labels-shaped",
+            "question": "What labels have shaped your life?"
+          },
+          {
+            "id": "labels-to-remove",
+            "question": "If empower means to strengthen and cuff can be thought of as limiting or to hold one back, which of your labels should you remove despite it potentially being uncomfortable to do so?"
+          },
+          {
+            "id": "letter-to-self",
+            "question": "Write a letter to yourself introducing who you desire to become."
+          }
         ]
       }
     },
@@ -262,7 +277,7 @@
           "summary": "Get honest about the attachments that have outlived their usefulness.",
           "prompts": [
             "What are you most afraid to let go of, even though you know you should?",
-            "Whose approval are you still working for?"
+            "Whose approval are you still working for? Ex. Your younger self, a parent, a partner, boss, co-worker etc."
           ]
         },
         {
@@ -277,19 +292,40 @@
         }
       ],
       "discussion": [
-        { "id": "consumes-thoughts", "question": "What consumes most of your thoughts?" },
-        { "id": "run-to-stressed", "question": "What do you run to when stressed?" },
-        { "id": "emotionally-attached", "question": "What are you emotionally attached to?" },
-        { "id": "more-control", "question": "What has more control over you than it should?" }
+        {
+          "id": "consumes-thoughts",
+          "question": "What consumes most of your thoughts?"
+        },
+        {
+          "id": "run-to-stressed",
+          "question": "What do you run to when stressed?"
+        },
+        {
+          "id": "emotionally-attached",
+          "question": "What are you emotionally attached to?"
+        },
+        {
+          "id": "more-control",
+          "question": "What has more control over you than it should?"
+        }
       ],
       "journal": {
         "id": "journal-2",
         "title": "Journal · Week Two",
         "intro": "Compels means to drive forcibly. Treasure is defined as a quantity of valuable objects.",
         "prompts": [
-          { "id": "what-compels", "question": "What dream or goal is pushing you to wake up out of the bed? Pushing you to have an ounce of belief that it's possible?" },
-          { "id": "things-of-value", "question": "What are some things of value in your life?" },
-          { "id": "overinvested", "question": "Are there any things that you are putting too much time, energy, money or effort into which don't deserve it?" }
+          {
+            "id": "what-compels",
+            "question": "What dream or goal is pushing you to wake up out of the bed? Pushing you to have an ounce of belief that it's possible?"
+          },
+          {
+            "id": "things-of-value",
+            "question": "What are some things of value in your life?"
+          },
+          {
+            "id": "overinvested",
+            "question": "Are there any things that you are putting too much time, energy, money or effort into which don't deserve it?"
+          }
         ]
       }
     },
@@ -420,17 +456,28 @@
       ],
       "discussion": [
         { "id": "own-way", "question": "How do you get in your own way?" },
-        { "id": "delayed-avoided", "question": "What opportunities have you delayed or avoided?" },
-        { "id": "fuel-sabotage", "question": "What beliefs fuel your self-sabotage?" },
-        { "id": "protecting-from", "question": "What are you protecting yourself from?" }
+        {
+          "id": "delayed-avoided",
+          "question": "What opportunities have you delayed or avoided?"
+        },
+        {
+          "id": "fuel-sabotage",
+          "question": "What beliefs fuel your self-sabotage?"
+        }
       ],
       "journal": {
         "id": "journal-3",
         "title": "Journal · Week Three",
         "intro": "Sabotage: to deliberately destroy, damage or obstruct something.",
         "prompts": [
-          { "id": "sabotaged-self", "question": "When you think of your life and how you would like for it to go, in what ways throughout the years have you sabotaged yourself?" },
-          { "id": "combat-sabotage", "question": "How can you specifically combat your own forms of sabotage?" }
+          {
+            "id": "sabotaged-self",
+            "question": "When you think of your life and how you would like for it to go, in what ways throughout the years have you sabotaged yourself?"
+          },
+          {
+            "id": "combat-sabotage",
+            "question": "How can you specifically combat your own forms of sabotage?"
+          }
         ]
       }
     },
@@ -559,16 +606,28 @@
         }
       ],
       "discussion": [
-        { "id": "small-start-dismissing", "question": "What 'small start' have you been dismissing?" },
-        { "id": "underestimated-consistency", "question": "Where have you underestimated consistency?" },
-        { "id": "long-term-commitment", "question": "What would happen if you committed long-term?" }
+        {
+          "id": "small-start-dismissing",
+          "question": "What 'small start' have you been dismissing?"
+        },
+        {
+          "id": "underestimated-consistency",
+          "question": "Where have you underestimated consistency?"
+        },
+        {
+          "id": "long-term-commitment",
+          "question": "What would happen if you committed long-term?"
+        }
       ],
       "journal": {
         "id": "journal-4",
         "title": "Journal · Week Four",
         "intro": "\"Do not despise the small beginnings…\" (Zechariah 4:10) — Consider the foundation of a home. A home can be as big as it wants to be, but the fact of the matter is, it'd be nothing without the much 'smaller' foundation. So don't despise the foundation. Not only is it necessary, but it is VALUABLE.",
         "prompts": [
-          { "id": "small-but-integral", "question": "Think back on a time where years ago there was something you were working on or towards that seemed small and insignificant but fast forward, years later, you can see it was an integral part of who and where you are today. Write about it." }
+          {
+            "id": "small-but-integral",
+            "question": "Think back on a time where years ago there was something you were working on or towards that seemed small and insignificant but fast forward, years later, you can see it was an integral part of who and where you are today. Write about it."
+          }
         ]
       }
     },
@@ -672,7 +731,8 @@
           "summary": "Sit with your future self for 10 minutes and capture what you see.",
           "prompts": [
             "Describe a single ordinary day one year from now — what you wake to, what you do, what you feel.",
-            "What's one detail of that day that surprised you?"
+            "What's one detail of that day that surprised you?",
+            "What's one detail that brought you joy?"
           ]
         },
         {
@@ -692,23 +752,41 @@
           "summary": "Write the declarations you'll repeat to yourself daily.",
           "prompts": [
             "Write three affirmations in the present tense (I am…, I have…, I'm becoming…).",
-            "When will you say them, and where?"
+            "What time the day will you say them?"
           ]
         }
       ],
       "discussion": [
-        { "id": "expecting-from-life", "question": "What are you expecting from life right now?" },
-        { "id": "habits-reflect-belief", "question": "Do your habits reflect belief in your future?" },
-        { "id": "disappointment-impact", "question": "Where has disappointment impacted your expectancy?" }
+        {
+          "id": "expecting-from-life",
+          "question": "What are you expecting from life right now?"
+        },
+        {
+          "id": "habits-reflect-belief",
+          "question": "Do your habits reflect belief in your future?"
+        },
+        {
+          "id": "disappointment-impact",
+          "question": "Where has disappointment impacted your expectancy?"
+        }
       ],
       "journal": {
         "id": "journal-5",
         "title": "Journal · Week Five",
         "intro": "When you expect something, that means you assuredly believe it is going to happen, not that it 'can' happen. You wait with conviction that it is yours and have a boldness that's unquestionable.",
         "prompts": [
-          { "id": "expecting-or-believing", "question": "What are we expecting or believing to be ours?" },
-          { "id": "potential-hindrances", "question": "Now, be real with yourself. What are potential things that can stand in the way of your expectations?" },
-          { "id": "address-hindrances", "question": "Lastly, how can we address those potential hindrances, so that we get every last thing we have a strong belief for?" }
+          {
+            "id": "expecting-or-believing",
+            "question": "What are we expecting or believing to be ours?"
+          },
+          {
+            "id": "potential-hindrances",
+            "question": "Now, be real with yourself. What are potential things that can stand in the way of your expectations?"
+          },
+          {
+            "id": "address-hindrances",
+            "question": "Lastly, how can we address those potential hindrances, so that we get every last thing we have a strong belief for?"
+          }
         ]
       }
     },
@@ -814,28 +892,46 @@
         },
         {
           "id": "accountability-discussion",
-          "title": "Group Accountability Discussion",
+          "title": "Class Accountability Discussion",
           "kind": "reflection",
           "summary": "How will you stay accountable past the closing session? Capture your thoughts to bring into the conversation.",
           "prompts": [
             "Who is your accountability partner past this masterclass?",
-            "What's the check-in cadence — and the consequence if you miss it?"
+            "How often will you check in — and what will happen if you miss a check-in?"
           ]
         }
       ],
       "discussion": [
-        { "id": "leave-behind", "question": "What are you being called to leave behind?" },
-        { "id": "leap-avoiding", "question": "What leap have you been avoiding?" },
-        { "id": "trust-yourself", "question": "What would your life look like if you trusted yourself fully?" }
+        {
+          "id": "leave-behind",
+          "question": "What are you being called to leave behind?"
+        },
+        {
+          "id": "leap-avoiding",
+          "question": "What leap have you been avoiding?"
+        },
+        {
+          "id": "trust-yourself",
+          "question": "What would your life look like if you trusted yourself fully?"
+        }
       ],
       "journal": {
         "id": "journal-6",
         "title": "Journal · Week Six",
         "intro": "Leap means to make a LARGE jump. Usually from ONE place to ANOTHER. As we wrap, you are declaring you will apply these principles and keep the commitment to the business of YOU.",
         "prompts": [
-          { "id": "coming-from-going", "question": "Where are you coming from and where are you going?" },
-          { "id": "refuse-without", "question": "List three things you absolutely refuse to not have this year." },
-          { "id": "commit-goals", "question": "What are three ways you'll commit to those goals?" }
+          {
+            "id": "coming-from-going",
+            "question": "Where are you coming from and where are you going?"
+          },
+          {
+            "id": "refuse-without",
+            "question": "List three things you absolutely refuse to not have this year."
+          },
+          {
+            "id": "commit-goals",
+            "question": "What are three ways you'll commit to those goals?"
+          }
         ]
       }
     }

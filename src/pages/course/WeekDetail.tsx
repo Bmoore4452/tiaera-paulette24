@@ -225,6 +225,16 @@ export default function WeekDetail() {
                 {week.journal.intro && (
                   <span className="mt-1 block text-sm text-bone">{week.journal.intro}</span>
                 )}
+                {week.journal.prompts.length > 0 && (
+                  <ul className="mt-2 space-y-1">
+                    {week.journal.prompts.map((p) => (
+                      <li key={p.id} className="flex gap-2 text-sm text-bone/70">
+                        <PencilLine size={13} className="mt-0.5 shrink-0 text-flame/60" />
+                        <span>{p.question}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </span>
             </span>
             <ChevronRight size={18} className="shrink-0 text-bone/40 transition-colors group-hover:text-flame" />

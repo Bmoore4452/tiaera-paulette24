@@ -168,7 +168,7 @@
         },
         {
           "id": "focus-reflection",
-          "title": "Reflection: Where You Need More Focus",
+          "title": "Reflection: Where Do You Need More Focus",
           "kind": "reflection",
           "summary": "Look honestly at your schedule and where it overloads you.",
           "prompts": [

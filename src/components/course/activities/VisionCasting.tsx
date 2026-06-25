@@ -76,7 +76,7 @@ export default function VisionCasting({ activity, courseId, weekId }: ActivityPr
         <TextArea
           value={state.statement}
           onChange={(e) => setState((p) => ({ ...p, statement: e.target.value }))}
-          placeholder="e.g. I am becoming who I prayed I'd be — and my actions today match that woman."
+          placeholder="e.g. I am becoming who I prayed I'd be — and my actions today match that individual."
           className="min-h-[110px]"
         />
         <p className="mt-3 text-xs text-bone/60">
